@@ -21,6 +21,41 @@
 
 
 module S_box_layer(
-
+                    input clk,
+                    input reset,
+                    input mem_en,
+                    input [7:0] data_in,
+                    output reg [7:0] data_out
     );
+    
+    wire [7:0] mem_val;
+    reg [7:0] addrs_cnt;
+    wire [7:0] temp_addrs_val;
+    reg [3:0] lower_bits = {4{1'bz}}, upper_bits = {4{1'bz}};
+    
+    s_block_mem mem_i0(
+                        .clka(clk),
+                        .ena(mem_en),
+                        .wea(1'b0),
+                        .addra(addrs_cnt),
+                        .dina({(8){1'b0}}),
+                        .douta(mem_val));
+                        
+    always @(posedge clk) begin
+        if(reset) begin
+            lower_bits <= {4{1'bz}};
+            upper_bits <= {4{1'bz}};
+            addrs_cnt <= {8{1'bz}};
+            data_out <= {8{1'bz}};
+        end
+        else begin
+            lower_bits <= data_in[3:0];
+            upper_bits <= data_in[7:4];
+            addrs_cnt <= temp_addrs_val;
+            data_out <= mem_val;
+        end
+    end
+    
+    assign temp_addrs_val = ((upper_bits) * 5'b10000) + ((lower_bits) * 5'b00001) + 5'b00001;
+    
 endmodule
