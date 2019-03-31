@@ -24,8 +24,7 @@ module S_box_layer_tb(
     );
     
     reg clk;
-    reg reset;
-    reg mem_en;
+    reg reset = 0;
     reg [7:0] data_in;
     wire [7:0] data_out;
     integer period = 10;
@@ -33,7 +32,6 @@ module S_box_layer_tb(
     S_box_layer uut(
                     .clk(clk),
                     .reset(reset),
-                    .mem_en(mem_en),
                     .data_in(data_in),
                     .data_out(data_out));
     
@@ -43,11 +41,27 @@ module S_box_layer_tb(
     
     initial begin
         clk = 0;
-        reset = 1'b1;
-        mem_en = 1'b1;
+        #(period);
+        
         data_in = 8'h9a;
         
         #(period);
+        
+        reset = 1'b1;
+        
+        #(3*period);
+        
+        reset = 1'b0;
+        data_in = 8'h5f;
+        
+        #(period);
+                
+        reset = 1'b1;
+        
+        #(3*period);
+        
+        reset = 1'b0;
+        data_in = 8'h28;
         
         reset = 1'b0;
         

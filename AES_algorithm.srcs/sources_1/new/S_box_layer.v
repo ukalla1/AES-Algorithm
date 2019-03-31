@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: Private
+// Engineer: Uttej Kallakuri
 // 
 // Create Date: 03/31/2019 01:15:41 AM
 // Design Name: 
@@ -23,39 +23,47 @@
 module S_box_layer(
                     input clk,
                     input reset,
-                    input mem_en,
                     input [7:0] data_in,
-                    output reg [7:0] data_out
+                    output [7:0] data_out
     );
     
-    wire [7:0] mem_val;
-    reg [7:0] addrs_cnt;
-    wire [7:0] temp_addrs_val;
-    reg [3:0] lower_bits = {4{1'bz}}, upper_bits = {4{1'bz}};
+    wire [7:0] addrs_cnt;
+    (*keep = "true"*) reg [3:0] lower_bits = {4{1'bz}}, upper_bits = {4{1'bz}};
     
-    s_block_mem mem_i0(
-                        .clka(clk),
-                        .ena(mem_en),
-                        .wea(1'b0),
-                        .addra(addrs_cnt),
-                        .dina({(8){1'b0}}),
-                        .douta(mem_val));
+    //memory look up table instantiation with a total read latency of 2 clock cycles with active high write and active low chip enables.
+    
+    mem #(
+            .MEM_DEPTH(256),
+            .bit_size(8),
+            .INIT_FILE("s_block_mem.mem")
+        )mem_i(
+            .mem_out(data_out),
+            .clk(clk),
+            .addrs(addrs_cnt),
+            .ena(1'b0),
+            .wen(1'b0),
+            .rst(1'b0),
+            .data_in({8{1'b0}}));
+    
+//    s_block_mem mem_i0(
+//                        .clka(clk),
+//                        .ena(mem_en),
+//                        .wea(1'b0),
+//                        .addra(addrs_cnt),
+//                        .dina({(8){1'b0}}),
+//                        .douta(mem_val));
                         
     always @(posedge clk) begin
         if(reset) begin
             lower_bits <= {4{1'bz}};
             upper_bits <= {4{1'bz}};
-            addrs_cnt <= {8{1'bz}};
-            data_out <= {8{1'bz}};
         end
         else begin
             lower_bits <= data_in[3:0];
             upper_bits <= data_in[7:4];
-            addrs_cnt <= temp_addrs_val;
-            data_out <= mem_val;
         end
     end
     
-    assign temp_addrs_val = ((upper_bits) * 5'b10000) + ((lower_bits) * 5'b00001) + 5'b00001;
+    assign addrs_cnt = ((upper_bits) * 5'b10000) + ((lower_bits) * 5'b00001);
     
 endmodule

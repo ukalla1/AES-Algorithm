@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Sun Mar 31 10:10:11 2019
+# Process ID: 14788
+# Current directory: C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/synth_1
+# Command line: vivado.exe -log S_box_layer.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source S_box_layer.tcl
+# Log file: C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/synth_1/S_box_layer.vds
+# Journal file: C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source S_box_layer.tcl -notrace

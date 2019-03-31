@@ -1,7 +1,7 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
-"../../../../AES_algorithm.srcs/sources_1/ip/s_block_mem/sim/s_block_mem.v" \
 "../../../../AES_algorithm.srcs/sources_1/new/S_box_layer.v" \
+"../../../../AES_algorithm.srcs/sources_1/new/mem.v" \
 "../../../../AES_algorithm.srcs/sim_1/new/S_box_layer_tb.v" \
 
 # compile glbl module
