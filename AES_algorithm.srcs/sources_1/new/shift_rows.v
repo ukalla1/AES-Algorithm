@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: Private
+// Engineer: Uttej Kallakuri
 // 
 // Create Date: 03/31/2019 10:20:52 AM
 // Design Name: 
@@ -27,16 +27,16 @@ module shift_rows(
                     input load_internal_regs,
                     input begin_shifting,
                     input re_order_internal_reg,
-                    output reg [127:0] data_out
+                    (*keep = "true"*) output reg [127:0] data_out
     );
     
-    reg [7:0] b_reg0 = {8{1'b0}}, b_reg1 = {8{1'b0}}, b_reg2 = {8{1'b0}}, b_reg3 = {8{1'b0}};
-    reg [7:0] b_reg4 = {8{1'b0}}, b_reg5 = {8{1'b0}}, b_reg6 = {8{1'b0}}, b_reg7 = {8{1'b0}};
-    reg [7:0] b_reg8 = {8{1'b0}}, b_reg9 = {8{1'b0}}, b_reg10 = {8{1'b0}}, b_reg11 = {8{1'b0}}; 
-    reg [7:0] b_reg12 = {8{1'b0}}, b_reg13 = {8{1'b0}}, b_reg14 = {8{1'b0}}, b_reg15 = {8{1'b0}};
-    reg [31:0] temp_out0 = {31{1'b0}},  temp_out1 = {31{1'b0}},  temp_out2 = {31{1'b0}}, temp_out3 = {31{1'b0}};
-    reg [1:0] cnt_one = 2'b01, cnt_two = 2'b10, cnt_three = 2'b11;
-    reg load_output_regs = 1'b0;
+    (*keep = "true"*) reg [7:0] b_reg0 = {8{1'b0}}, b_reg1 = {8{1'b0}}, b_reg2 = {8{1'b0}}, b_reg3 = {8{1'b0}};
+    (*keep = "true"*) reg [7:0] b_reg4 = {8{1'b0}}, b_reg5 = {8{1'b0}}, b_reg6 = {8{1'b0}}, b_reg7 = {8{1'b0}};
+    (*keep = "true"*) reg [7:0] b_reg8 = {8{1'b0}}, b_reg9 = {8{1'b0}}, b_reg10 = {8{1'b0}}, b_reg11 = {8{1'b0}}; 
+    (*keep = "true"*) reg [7:0] b_reg12 = {8{1'b0}}, b_reg13 = {8{1'b0}}, b_reg14 = {8{1'b0}}, b_reg15 = {8{1'b0}};
+    (*keep = "true"*) reg [31:0] temp_out0 = {32{1'b0}},  temp_out1 = {32{1'b0}},  temp_out2 = {32{1'b0}}, temp_out3 = {32{1'b0}};
+    (*keep = "true"*) reg [1:0] cnt_one = 2'b01, cnt_two = 2'b10, cnt_three = 2'b11;
+    (*keep = "true"*) reg load_output_regs = 1'b0;
     
     always @(posedge clk) begin
         load_output_regs <= 1'b0;
@@ -46,7 +46,7 @@ module shift_rows(
             b_reg8 <= {8{1'b0}}; b_reg9 <= {8{1'b0}}; b_reg10 <= {8{1'b0}}; b_reg11 <= {8{1'b0}}; 
             b_reg12 <= {8{1'b0}}; b_reg13 <= {8{1'b0}}; b_reg14 <= {8{1'b0}}; b_reg15 <= {8{1'b0}};
             cnt_one <= 2'b01; cnt_two <= 2'b10; cnt_three <= 2'b11;
-            temp_out0 <= {31{1'b0}};  temp_out1 <= {31{1'b0}};  temp_out2 <= {31{1'b0}}; temp_out3 <= {31{1'b0}};
+            temp_out0 <= {32{1'b0}};  temp_out1 <= {32{1'b0}};  temp_out2 <= {32{1'b0}}; temp_out3 <= {32{1'b0}};
         end
         else begin
             if(load_internal_regs) begin
@@ -87,7 +87,7 @@ module shift_rows(
             
                 //we shift the first row 0 times, second row 1 time, third row 2 times and fourth row 3 times.
                 if(cnt_one > 0) begin
-                    temp_out1 <= {temp_out1[23:0], temp_out1[7:0]};
+                    temp_out1 <= {temp_out1[23:0],temp_out1[31:24]};
                     cnt_one <= cnt_one - 1'b1;
                 end
                 else begin
@@ -95,7 +95,7 @@ module shift_rows(
                 end
                 
                 if(cnt_two > 0) begin
-                    temp_out2 <= {temp_out2[23:0], temp_out2[7:0]};
+                    temp_out2 <= {temp_out2[23:0],temp_out2[31:24]};
                     cnt_two <= cnt_two - 1'b1;
                 end
                 else begin
@@ -103,7 +103,7 @@ module shift_rows(
                 end
                 
                 if(cnt_three > 0) begin
-                    temp_out3 <= {temp_out3[23:0], temp_out3[7:0]};
+                    temp_out3 <= {temp_out3[23:0],temp_out3[31:24]};
                     cnt_three <= cnt_three - 1'b1;
                 end
                 else begin
