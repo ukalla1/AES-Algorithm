@@ -24,6 +24,7 @@ module S_box_layer(
                     input clk,
                     input reset,
                     input [7:0] data_in,
+                    input start,
                     output [7:0] data_out
     );
     
@@ -59,8 +60,14 @@ module S_box_layer(
             upper_bits <= {4{1'bz}};
         end
         else begin
-            lower_bits <= data_in[3:0];
-            upper_bits <= data_in[7:4];
+            if(start) begin
+                lower_bits <= data_in[3:0];
+                upper_bits <= data_in[7:4];
+            end
+            else begin
+                lower_bits <= lower_bits;
+                upper_bits <= upper_bits;
+            end
         end
     end
     

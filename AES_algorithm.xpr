@@ -31,7 +31,7 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="ac701"/>
     <Option Name="DSANumComputeUnits" Val="16"/>
-    <Option Name="WTXSimLaunchSim" Val="108"/>
+    <Option Name="WTXSimLaunchSim" Val="112"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -55,37 +55,8 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/new/bit_32_crypto_mul.v">
+      <File Path="$PSRCDIR/sources_1/new/S_box_layer.v">
         <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/bit_8_crypto_mul.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/crypto_mul_32Bit_wrapper.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/mix_columns.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/shift_rows.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -93,13 +64,51 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/mem.v">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/S_box_wrapper.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/bit_32_crypto_mul.v">
+        <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/S_box_layer.v">
+      <File Path="$PSRCDIR/sources_1/new/bit_8_crypto_mul.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/crypto_mul_32Bit_wrapper.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/mix_columns.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/shift_rows.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -123,7 +132,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="mix_columns"/>
+        <Option Name="TopModule" Val="S_box_wrapper"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -141,8 +150,16 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sim_1/new/S_box_wrapper_tb.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sim_1/new/mix_columns_tb.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -226,9 +243,14 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/S_box_wrapper_tb_behav.wcfg">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="mix_columns_tb"/>
+        <Option Name="TopModule" Val="S_box_wrapper_tb"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
@@ -239,6 +261,7 @@
         <Option Name="XSimWcfgFile" Val="$PPRDIR/bit_32_crypto_mul_tb_behav.wcfg"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/crypto_mul_32Bit_wrapper_tb_behav.wcfg"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/mix_columns_tb_behav.wcfg"/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/S_box_wrapper_tb_behav.wcfg"/>
         <Option Name="NLNetlistMode" Val="funcsim"/>
       </Config>
     </FileSet>
@@ -294,11 +317,11 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017">
-        <ReportConfig Name="synth_2_synth_report_utilization_0" Spec="report_utilization" RunStep="synth_design" ReportFile="mix_columns_utilization_synth.rpt" Version="1" Minor="0">
+        <ReportConfig Name="synth_2_synth_report_utilization_0" Spec="report_utilization" RunStep="synth_design" ReportFile="S_box_wrapper_utilization_synth.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
-          <ReportConfigOutputOption Name="pb" Type="string" Value="mix_columns_utilization_synth.pb"/>
+          <ReportConfigOutputOption Name="pb" Type="string" Value="S_box_wrapper_utilization_synth.pb"/>
         </ReportConfig>
-        <ReportConfig Name="synth_2_synth_synthesis_report_0" Spec="" RunStep="synth_design" ReportFile="mix_columns.vds">
+        <ReportConfig Name="synth_2_synth_synthesis_report_0" Spec="" RunStep="synth_design" ReportFile="S_box_wrapper.vds">
           <ReportConfigOption Name="dummy_option" Type="string"/>
         </ReportConfig>
       </ReportStrategy>
@@ -432,10 +455,10 @@
           <ReportConfigOption Name="dummy_option" Type="string"/>
           <ReportConfigOutputOption Name="rpx" Type="string" Value=""/>
         </ReportConfig>
-        <ReportConfig Name="impl_2_opt_report_drc_0" Spec="report_drc" RunStep="opt_design" ReportFile="mix_columns_drc_opted.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_2_opt_report_drc_0" Spec="report_drc" RunStep="opt_design" ReportFile="S_box_wrapper_drc_opted.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
-          <ReportConfigOutputOption Name="pb" Type="string" Value="mix_columns_drc_opted.pb"/>
-          <ReportConfigOutputOption Name="rpx" Type="string" Value="mix_columns_drc_opted.rpx"/>
+          <ReportConfigOutputOption Name="pb" Type="string" Value="S_box_wrapper_drc_opted.pb"/>
+          <ReportConfigOutputOption Name="rpx" Type="string" Value="S_box_wrapper_drc_opted.rpx"/>
         </ReportConfig>
         <ReportConfig Name="impl_2_opt_report_timing_summary_0" Spec="report_timing_summary" RunStep="opt_design" Version="1" Minor="0" IsDisabled="true">
           <ReportConfigOption Name="dummy_option" Type="string"/>
@@ -445,14 +468,14 @@
           <ReportConfigOption Name="dummy_option" Type="string"/>
           <ReportConfigOutputOption Name="rpx" Type="string" Value=""/>
         </ReportConfig>
-        <ReportConfig Name="impl_2_place_report_io_0" Spec="report_io" RunStep="place_design" ReportFile="mix_columns_io_placed.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_2_place_report_io_0" Spec="report_io" RunStep="place_design" ReportFile="S_box_wrapper_io_placed.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
         </ReportConfig>
-        <ReportConfig Name="impl_2_place_report_utilization_0" Spec="report_utilization" RunStep="place_design" ReportFile="mix_columns_utilization_placed.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_2_place_report_utilization_0" Spec="report_utilization" RunStep="place_design" ReportFile="S_box_wrapper_utilization_placed.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
-          <ReportConfigOutputOption Name="pb" Type="string" Value="mix_columns_utilization_placed.pb"/>
+          <ReportConfigOutputOption Name="pb" Type="string" Value="S_box_wrapper_utilization_placed.pb"/>
         </ReportConfig>
-        <ReportConfig Name="impl_2_place_report_control_sets_0" Spec="report_control_sets" RunStep="place_design" ReportFile="mix_columns_control_sets_placed.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_2_place_report_control_sets_0" Spec="report_control_sets" RunStep="place_design" ReportFile="S_box_wrapper_control_sets_placed.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
         </ReportConfig>
         <ReportConfig Name="impl_2_place_report_incremental_reuse_0" Spec="report_incremental_reuse" RunStep="place_design" Version="1" Minor="0" IsDisabled="true">
@@ -473,36 +496,36 @@
           <ReportConfigOption Name="dummy_option" Type="string"/>
           <ReportConfigOutputOption Name="rpx" Type="string" Value=""/>
         </ReportConfig>
-        <ReportConfig Name="impl_2_route_report_drc_0" Spec="report_drc" RunStep="route_design" ReportFile="mix_columns_drc_routed.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_2_route_report_drc_0" Spec="report_drc" RunStep="route_design" ReportFile="S_box_wrapper_drc_routed.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
-          <ReportConfigOutputOption Name="pb" Type="string" Value="mix_columns_drc_routed.pb"/>
-          <ReportConfigOutputOption Name="rpx" Type="string" Value="mix_columns_drc_routed.rpx"/>
+          <ReportConfigOutputOption Name="pb" Type="string" Value="S_box_wrapper_drc_routed.pb"/>
+          <ReportConfigOutputOption Name="rpx" Type="string" Value="S_box_wrapper_drc_routed.rpx"/>
         </ReportConfig>
-        <ReportConfig Name="impl_2_route_report_methodology_0" Spec="report_methodology" RunStep="route_design" ReportFile="mix_columns_methodology_drc_routed.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_2_route_report_methodology_0" Spec="report_methodology" RunStep="route_design" ReportFile="S_box_wrapper_methodology_drc_routed.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
-          <ReportConfigOutputOption Name="pb" Type="string" Value="mix_columns_methodology_drc_routed.pb"/>
-          <ReportConfigOutputOption Name="rpx" Type="string" Value="mix_columns_methodology_drc_routed.rpx"/>
+          <ReportConfigOutputOption Name="pb" Type="string" Value="S_box_wrapper_methodology_drc_routed.pb"/>
+          <ReportConfigOutputOption Name="rpx" Type="string" Value="S_box_wrapper_methodology_drc_routed.rpx"/>
         </ReportConfig>
-        <ReportConfig Name="impl_2_route_report_power_0" Spec="report_power" RunStep="route_design" ReportFile="mix_columns_power_routed.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_2_route_report_power_0" Spec="report_power" RunStep="route_design" ReportFile="S_box_wrapper_power_routed.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
-          <ReportConfigOutputOption Name="pb" Type="string" Value="mix_columns_power_summary_routed.pb"/>
-          <ReportConfigOutputOption Name="rpx" Type="string" Value="mix_columns_power_routed.rpx"/>
+          <ReportConfigOutputOption Name="pb" Type="string" Value="S_box_wrapper_power_summary_routed.pb"/>
+          <ReportConfigOutputOption Name="rpx" Type="string" Value="S_box_wrapper_power_routed.rpx"/>
         </ReportConfig>
-        <ReportConfig Name="impl_2_route_report_route_status_0" Spec="report_route_status" RunStep="route_design" ReportFile="mix_columns_route_status.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_2_route_report_route_status_0" Spec="report_route_status" RunStep="route_design" ReportFile="S_box_wrapper_route_status.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
-          <ReportConfigOutputOption Name="pb" Type="string" Value="mix_columns_route_status.pb"/>
+          <ReportConfigOutputOption Name="pb" Type="string" Value="S_box_wrapper_route_status.pb"/>
         </ReportConfig>
-        <ReportConfig Name="impl_2_route_report_timing_summary_0" Spec="report_timing_summary" RunStep="route_design" ReportFile="mix_columns_timing_summary_routed.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_2_route_report_timing_summary_0" Spec="report_timing_summary" RunStep="route_design" ReportFile="S_box_wrapper_timing_summary_routed.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
-          <ReportConfigOutputOption Name="rpx" Type="string" Value="mix_columns_timing_summary_routed.rpx"/>
+          <ReportConfigOutputOption Name="rpx" Type="string" Value="S_box_wrapper_timing_summary_routed.rpx"/>
         </ReportConfig>
-        <ReportConfig Name="impl_2_route_report_incremental_reuse_0" Spec="report_incremental_reuse" RunStep="route_design" ReportFile="mix_columns_incremental_reuse_routed.rpt" Version="1" Minor="0">
-          <ReportConfigOption Name="dummy_option" Type="string"/>
-        </ReportConfig>
-        <ReportConfig Name="impl_2_route_report_clock_utilization_0" Spec="report_clock_utilization" RunStep="route_design" ReportFile="mix_columns_clock_utilization_routed.rpt" Version="1" Minor="0">
+        <ReportConfig Name="impl_2_route_report_incremental_reuse_0" Spec="report_incremental_reuse" RunStep="route_design" ReportFile="S_box_wrapper_incremental_reuse_routed.rpt" Version="1" Minor="0">
           <ReportConfigOption Name="dummy_option" Type="string"/>
         </ReportConfig>
-        <ReportConfig Name="impl_2_route_implementation_log_0" Spec="" RunStep="route_design" ReportFile="mix_columns.vdi">
+        <ReportConfig Name="impl_2_route_report_clock_utilization_0" Spec="report_clock_utilization" RunStep="route_design" ReportFile="S_box_wrapper_clock_utilization_routed.rpt" Version="1" Minor="0">
+          <ReportConfigOption Name="dummy_option" Type="string"/>
+        </ReportConfig>
+        <ReportConfig Name="impl_2_route_implementation_log_0" Spec="" RunStep="route_design" ReportFile="S_box_wrapper.vdi">
           <ReportConfigOption Name="dummy_option" Type="string"/>
         </ReportConfig>
         <ReportConfig Name="impl_2_post_route_phys_opt_report_timing_summary_0" Spec="report_timing_summary" RunStep="post_route_phys_opt_design" Version="1" Minor="0">
