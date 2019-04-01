@@ -78,8 +78,14 @@ module bit_8_crypto_mul(
         temp_result = {8{1'b0}};
         
         if(delay_cntr_en) begin
-            temp_result = b;
-            load_result = 1'b1;
+            if(b[7]) begin
+                temp_result = b ^ 8'b00011011;
+                load_result = 1'b1;
+            end
+            else begin
+                temp_result = b;
+                load_result = 1'b1;
+            end
         end
         else if(compute_2) begin
             if(b[7]) begin

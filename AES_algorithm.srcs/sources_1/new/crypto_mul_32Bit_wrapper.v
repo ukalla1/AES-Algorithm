@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: Private
+// Engineer: Uttej Kallakuri
 // 
 // Create Date: 04/01/2019 10:35:09 AM
 // Design Name: 

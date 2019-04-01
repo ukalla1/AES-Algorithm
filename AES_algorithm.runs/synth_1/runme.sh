@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log crypto_mul_32Bit_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source crypto_mul_32Bit_wrapper.tcl
+EAStep vivado -log mix_columns.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mix_columns.tcl

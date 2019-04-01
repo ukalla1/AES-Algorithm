@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a50tcsg325-1" LaunchTime="1554130291">
-  <File Type="PWROPT-DCP" Name="crypto_mul_32Bit_wrapper_pwropt.dcp"/>
-  <File Type="ROUTE-PWR" Name="crypto_mul_32Bit_wrapper_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="crypto_mul_32Bit_wrapper.tcl"/>
+<GenRun Id="impl_1" LaunchPart="xc7a50tcsg325-1" LaunchTime="1554142864">
+  <File Type="PWROPT-DCP" Name="mix_columns_pwropt.dcp"/>
+  <File Type="ROUTE-PWR" Name="mix_columns_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="mix_columns.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="bit_32_crypto_mul_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="crypto_mul_32Bit_wrapper_reports.tcl"/>
-  <File Type="BG-DRC" Name="crypto_mul_32Bit_wrapper.drc"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="crypto_mul_32Bit_wrapper_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="crypto_mul_32Bit_wrapper_timing_summary_init.rpt"/>
-  <File Type="OPT-HWDEF" Name="crypto_mul_32Bit_wrapper.hwdef"/>
-  <File Type="OPT-DCP" Name="crypto_mul_32Bit_wrapper_opt.dcp"/>
-  <File Type="OPT-DRC" Name="crypto_mul_32Bit_wrapper_drc_opted.rpt"/>
-  <File Type="OPT-TIMING" Name="crypto_mul_32Bit_wrapper_timing_summary_opted.rpt"/>
-  <File Type="PWROPT-DRC" Name="crypto_mul_32Bit_wrapper_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="crypto_mul_32Bit_wrapper_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="crypto_mul_32Bit_wrapper_placed.dcp"/>
-  <File Type="PLACE-IO" Name="crypto_mul_32Bit_wrapper_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="crypto_mul_32Bit_wrapper_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="crypto_mul_32Bit_wrapper_utilization_placed.rpt"/>
+  <File Type="REPORTS-TCL" Name="mix_columns_reports.tcl"/>
+  <File Type="BG-DRC" Name="mix_columns.drc"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="mix_columns_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="mix_columns_timing_summary_init.rpt"/>
+  <File Type="OPT-HWDEF" Name="mix_columns.hwdef"/>
+  <File Type="OPT-DCP" Name="mix_columns_opt.dcp"/>
+  <File Type="OPT-DRC" Name="mix_columns_drc_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="mix_columns_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="mix_columns_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="mix_columns_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="mix_columns_placed.dcp"/>
+  <File Type="PLACE-IO" Name="mix_columns_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="mix_columns_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="mix_columns_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="bit_32_crypto_mul_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="crypto_mul_32Bit_wrapper_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="crypto_mul_32Bit_wrapper_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="crypto_mul_32Bit_wrapper_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="crypto_mul_32Bit_wrapper_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="crypto_mul_32Bit_wrapper_postplace_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="crypto_mul_32Bit_wrapper_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="crypto_mul_32Bit_wrapper_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="crypto_mul_32Bit_wrapper_drc_physopted.rpt"/>
-  <File Type="BG-BIT" Name="crypto_mul_32Bit_wrapper.bit"/>
-  <File Type="PHYSOPT-TIMING" Name="crypto_mul_32Bit_wrapper_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-ERROR-DCP" Name="crypto_mul_32Bit_wrapper_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="crypto_mul_32Bit_wrapper_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="crypto_mul_32Bit_wrapper_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="crypto_mul_32Bit_wrapper_drc_routed.rpt"/>
+  <File Type="PLACE-CTRL" Name="mix_columns_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="mix_columns_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="mix_columns_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="mix_columns_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="mix_columns_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="mix_columns_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="mix_columns_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="mix_columns_drc_physopted.rpt"/>
+  <File Type="BG-BIT" Name="mix_columns.bit"/>
+  <File Type="PHYSOPT-TIMING" Name="mix_columns_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="mix_columns_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="mix_columns_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="mix_columns_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="mix_columns_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="bit_32_crypto_mul_drc_routed.pb"/>
-  <File Type="BITSTR-MSK" Name="crypto_mul_32Bit_wrapper.msk"/>
+  <File Type="BITSTR-MSK" Name="mix_columns.msk"/>
   <File Type="ROUTE-DRC-RPX" Name="bit_32_crypto_mul_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="crypto_mul_32Bit_wrapper.bgn"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="crypto_mul_32Bit_wrapper_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-RBT" Name="crypto_mul_32Bit_wrapper.rbt"/>
+  <File Type="BG-BGN" Name="mix_columns.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="mix_columns_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-RBT" Name="mix_columns.rbt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="bit_32_crypto_mul_methodology_drc_routed.rpx"/>
-  <File Type="BG-BIN" Name="crypto_mul_32Bit_wrapper.bin"/>
+  <File Type="BG-BIN" Name="mix_columns.bin"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="bit_32_crypto_mul_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="bit_32_crypto_mul_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="crypto_mul_32Bit_wrapper_route_status.rpt"/>
+  <File Type="ROUTE-STATUS" Name="mix_columns_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="bit_32_crypto_mul_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="crypto_mul_32Bit_wrapper_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="crypto_mul_32Bit_wrapper_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="mix_columns_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="mix_columns_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="bit_32_crypto_mul_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="crypto_mul_32Bit_wrapper_incremental_reuse_routed.rpt"/>
-  <File Type="RDI-RDI" Name="crypto_mul_32Bit_wrapper.vdi"/>
-  <File Type="ROUTE-CLK" Name="crypto_mul_32Bit_wrapper_clock_utilization_routed.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="crypto_mul_32Bit_wrapper_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="crypto_mul_32Bit_wrapper_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="crypto_mul_32Bit_wrapper_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="crypto_mul_32Bit_wrapper_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="crypto_mul_32Bit_wrapper_timing_summary_postroute_physopted.rpx"/>
-  <File Type="BITSTR-NKY" Name="crypto_mul_32Bit_wrapper.nky"/>
-  <File Type="BITSTR-BMM" Name="crypto_mul_32Bit_wrapper_bd.bmm"/>
-  <File Type="BITSTR-MMI" Name="crypto_mul_32Bit_wrapper.mmi"/>
+  <File Type="ROUTE-SIMILARITY" Name="mix_columns_incremental_reuse_routed.rpt"/>
+  <File Type="RDI-RDI" Name="mix_columns.vdi"/>
+  <File Type="ROUTE-CLK" Name="mix_columns_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="mix_columns_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="mix_columns_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="mix_columns_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="mix_columns_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="mix_columns_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="mix_columns.nky"/>
+  <File Type="BITSTR-BMM" Name="mix_columns_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="mix_columns.mmi"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="crypto_mul_32Bit_wrapper.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="crypto_mul_32Bit_wrapper.sysdef"/>
+  <File Type="BITSTR-LTX" Name="mix_columns.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="mix_columns.sysdef"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
@@ -80,6 +80,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/crypto_mul_32Bit_wrapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mix_columns.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -124,17 +131,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/mix_columns.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="crypto_mul_32Bit_wrapper"/>
+      <Option Name="TopModule" Val="mix_columns"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
