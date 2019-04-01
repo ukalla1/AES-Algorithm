@@ -25,7 +25,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log bit_8_crypto_mul.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source bit_8_crypto_mul.tcl -notrace" );
+         "-log bit_32_crypto_mul.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source bit_32_crypto_mul.tcl -notrace" );
 
 
 

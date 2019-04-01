@@ -2,11 +2,11 @@
 # Vivado v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Sun Mar 31 22:12:06 2019
-# Process ID: 32452
+# Start of session at: Sun Mar 31 23:12:41 2019
+# Process ID: 26580
 # Current directory: C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/impl_1
-# Command line: vivado.exe -log bit_8_crypto_mul.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source bit_8_crypto_mul.tcl -notrace
-# Log file: C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/impl_1/bit_8_crypto_mul.vdi
+# Command line: vivado.exe -log bit_32_crypto_mul.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source bit_32_crypto_mul.tcl -notrace
+# Log file: C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/impl_1/bit_32_crypto_mul.vdi
 # Journal file: C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
-source bit_8_crypto_mul.tcl -notrace
+source bit_32_crypto_mul.tcl -notrace

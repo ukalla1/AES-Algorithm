@@ -1,0 +1,7 @@
+Running: xsim.dir/bit_32_crypto_mul_tb_behav/xsimk.exe -simmode gui -wdb bit_32_crypto_mul_tb_behav.wdb -simrunnum 0 -socket 60347
+Design successfully loaded
+Design Loading Memory Usage: 6096 KB (Peak: 6096 KB)
+Design Loading CPU Usage: 31 ms
+Simulation completed
+Simulation Memory Usage: 6732 KB (Peak: 6732 KB)
+Simulation CPU Usage: 31 ms
