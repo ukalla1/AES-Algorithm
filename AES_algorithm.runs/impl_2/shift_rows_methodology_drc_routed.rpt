@@ -1,14 +1,14 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Mon Apr  1 18:32:15 2019
+| Date         : Mon Apr  1 20:05:49 2019
 | Host         : tensaZangetsu running 64-bit major release  (build 9200)
-| Command      : report_methodology -file S_box_wrapper_methodology_drc_routed.rpt -pb S_box_wrapper_methodology_drc_routed.pb -rpx S_box_wrapper_methodology_drc_routed.rpx
-| Design       : S_box_wrapper
+| Command      : report_methodology -file shift_rows_methodology_drc_routed.rpt -pb shift_rows_methodology_drc_routed.pb -rpx shift_rows_methodology_drc_routed.rpx
+| Design       : shift_rows
 | Device       : xc7a200tfbg676-2
 | Speed File   : -2
 | Design State : Routed
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Report Methodology
 
@@ -674,12 +674,12 @@ Related violations: <none>
 
 TIMING-18#129 Warning
 Missing input or output delay  
-An input delay is missing on reset relative to clock(s) clk
+An input delay is missing on load_internal_regs relative to clock(s) clk
 Related violations: <none>
 
 TIMING-18#130 Warning
 Missing input or output delay  
-An input delay is missing on start relative to clock(s) clk
+An input delay is missing on reset relative to clock(s) clk
 Related violations: <none>
 
 TIMING-18#131 Warning

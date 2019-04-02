@@ -2,11 +2,11 @@
 # Vivado v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Mon Apr  1 18:30:32 2019
-# Process ID: 16528
+# Start of session at: Mon Apr  1 20:04:13 2019
+# Process ID: 30832
 # Current directory: C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/impl_2
-# Command line: vivado.exe -log S_box_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source S_box_wrapper.tcl -notrace
-# Log file: C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/impl_2/S_box_wrapper.vdi
+# Command line: vivado.exe -log shift_rows.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source shift_rows.tcl -notrace
+# Log file: C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/impl_2/shift_rows.vdi
 # Journal file: C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/impl_2\vivado.jou
 #-----------------------------------------------------------
-source S_box_wrapper.tcl -notrace
+source shift_rows.tcl -notrace

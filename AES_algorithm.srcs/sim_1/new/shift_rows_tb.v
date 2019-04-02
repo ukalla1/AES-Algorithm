@@ -27,8 +27,6 @@ module shift_rows_tb(
     reg reset;
     reg [127:0] data_in;
     reg load_internal_regs = 1'b0;
-    reg  begin_shifting = 1'b0;
-    reg re_order_internal_reg = 1'b0;
     wire [127:0] data_out;
     integer period = 10;
     
@@ -42,8 +40,6 @@ module shift_rows_tb(
                 .reset(reset),
                 .data_in(data_in),
                 .load_internal_regs(load_internal_regs),
-                .re_order_internal_reg(re_order_internal_reg),
-                .begin_shifting(begin_shifting),
                 .data_out(data_out));
     
     initial begin
@@ -76,20 +72,8 @@ module shift_rows_tb(
         #(period);
         load_internal_regs = 1'b1;
         
-        #(5*period);
+        #(period);
         load_internal_regs = 1'b0;
-        
-        #(period);
-        re_order_internal_reg = 1'b1;
-        
-        #(5*period);
-        re_order_internal_reg = 1'b0;
-        
-        #(period);
-        begin_shifting = 1'b1;
-        
-        #(5*period);
-        begin_shifting = 1'b0;
         
         #(10*period);
         $finish;
