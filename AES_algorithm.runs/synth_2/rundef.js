@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log process_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source process_wrapper.tcl" );
+         "-log keyGenerator.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source keyGenerator.tcl" );
 
 
 

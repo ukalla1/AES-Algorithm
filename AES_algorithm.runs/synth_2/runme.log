@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log process_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source process_wrapper.tcl
+    with args -log keyGenerator.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source keyGenerator.tcl
 
 
 ****** Vivado v2017.3 (64-bit)
@@ -8,30 +8,24 @@
   **** IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
     ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 
-source process_wrapper.tcl -notrace
-Command: synth_design -top process_wrapper -part xc7a200tfbg676-2 -max_dsp 0
+source keyGenerator.tcl -notrace
+Command: synth_design -top keyGenerator -part xc7a200tfbg676-2 -max_dsp 0
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: [Vivado_Tcl 4-287] User specified maximum number of block DSP allowed in design is 0
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 24776 
+INFO: Helper process launched with PID 29964 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 344.719 ; gain = 100.516
+Starting Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 344.660 ; gain = 100.563
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'process_wrapper' [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/process_wrapper.v:23]
-	Parameter state_idle bound to: 3'b000 
-	Parameter state_byteSub bound to: 3'b001 
-	Parameter state_shiftRows bound to: 3'b010 
-	Parameter state_mixCols bound to: 3'b011 
-	Parameter state_addKey bound to: 3'b100 
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/process_wrapper.v:38]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/process_wrapper.v:40]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/process_wrapper.v:41]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/process_wrapper.v:43]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/process_wrapper.v:45]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/process_wrapper.v:47]
-INFO: [Synth 8-638] synthesizing module 'S_box_wrapper' [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/S_box_wrapper.v:23]
+INFO: [Synth 8-638] synthesizing module 'keyGenerator' [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/keyGenerator.v:23]
+	Parameter round_const bound to: 16777216 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/keyGenerator.v:36]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/keyGenerator.v:37]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/keyGenerator.v:39]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/keyGenerator.v:41]
+INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/keyGenerator.v:43]
 INFO: [Synth 8-638] synthesizing module 'S_box_layer' [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/S_box_layer.v:23]
 INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/S_box_layer.v:32]
 INFO: [Synth 8-638] synthesizing module 'mem' [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/mem.v:23]
@@ -44,60 +38,23 @@ INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desk
 INFO: [Synth 8-3876] $readmem data file 's_block_mem.mem' is read successfully [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/mem.v:43]
 INFO: [Synth 8-256] done synthesizing module 'mem' (1#1) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/mem.v:23]
 INFO: [Synth 8-256] done synthesizing module 'S_box_layer' (2#1) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/S_box_layer.v:23]
-INFO: [Synth 8-256] done synthesizing module 'S_box_wrapper' (3#1) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/S_box_wrapper.v:23]
-INFO: [Synth 8-638] synthesizing module 'shift_rows' [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/shift_rows.v:23]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/shift_rows.v:28]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/shift_rows.v:31]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/shift_rows.v:32]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/shift_rows.v:33]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/shift_rows.v:34]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/shift_rows.v:35]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/shift_rows.v:36]
-INFO: [Synth 8-256] done synthesizing module 'shift_rows' (4#1) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/shift_rows.v:23]
-INFO: [Synth 8-638] synthesizing module 'mix_columns' [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/mix_columns.v:23]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/mix_columns.v:32]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/mix_columns.v:33]
-INFO: [Synth 8-638] synthesizing module 'crypto_mul_32Bit_wrapper' [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/crypto_mul_32Bit_wrapper.v:23]
-	Parameter a_row0 bound to: 33751297 - type: integer 
-	Parameter a_row1 bound to: 16909057 - type: integer 
-	Parameter a_row2 bound to: 16843267 - type: integer 
-	Parameter a_row3 bound to: 50397442 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'bit_32_crypto_mul' [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/bit_32_crypto_mul.v:23]
-INFO: [Synth 8-638] synthesizing module 'bit_8_crypto_mul' [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/bit_8_crypto_mul.v:23]
-	Parameter gnd bound to: 1'b0 
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/bit_8_crypto_mul.v:31]
-INFO: [Synth 8-5534] Detected attribute (* keep = "true" *) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/bit_8_crypto_mul.v:32]
-INFO: [Synth 8-256] done synthesizing module 'bit_8_crypto_mul' (5#1) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/bit_8_crypto_mul.v:23]
-INFO: [Synth 8-256] done synthesizing module 'bit_32_crypto_mul' (6#1) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/bit_32_crypto_mul.v:23]
-INFO: [Synth 8-256] done synthesizing module 'crypto_mul_32Bit_wrapper' (7#1) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/crypto_mul_32Bit_wrapper.v:23]
-INFO: [Synth 8-256] done synthesizing module 'mix_columns' (8#1) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/mix_columns.v:23]
-INFO: [Synth 8-638] synthesizing module 'addRound_key' [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/addRound_key.v:23]
-INFO: [Synth 8-256] done synthesizing module 'addRound_key' (9#1) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/addRound_key.v:23]
-INFO: [Synth 8-256] done synthesizing module 'process_wrapper' (10#1) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/process_wrapper.v:23]
+INFO: [Synth 8-256] done synthesizing module 'keyGenerator' (3#1) [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/keyGenerator.v:23]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 397.313 ; gain = 153.109
+Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 396.863 ; gain = 152.766
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 397.313 ; gain = 153.109
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 396.863 ; gain = 152.766
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a200tfbg676-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 397.313 ; gain = 153.109
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 396.863 ; gain = 152.766
 INFO: [Device 21-403] Loading part xc7a200tfbg676-2
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5546] ROM "delay_cntr_en" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "compute_2" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "compute_3" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "start_mixCols" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "start_addKey" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "fsm_counter_val" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "fsm_counter_val" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "nextState" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 403.000 ; gain = 158.797
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 396.863 ; gain = 152.766
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -111,34 +68,23 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      4 Bit       Adders := 2     
-	   2 Input      3 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
 +---XORs : 
-	   2 Input    128 Bit         XORs := 2     
-	   2 Input      8 Bit         XORs := 256   
-	   4 Input      8 Bit         XORs := 16    
+	   2 Input     32 Bit         XORs := 5     
 +---Registers : 
-	              128 Bit    Registers := 5     
-	               32 Bit    Registers := 8     
-	                8 Bit    Registers := 128   
-	                4 Bit    Registers := 2     
-	                3 Bit    Registers := 2     
-	                1 Bit    Registers := 9     
+	              128 Bit    Registers := 2     
+	               32 Bit    Registers := 6     
+	                8 Bit    Registers := 8     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
 +---RAMs : 
-	               2K Bit         RAMs := 16    
+	               2K Bit         RAMs := 4     
 +---Muxes : 
-	   2 Input    128 Bit        Muxes := 2     
-	   2 Input     32 Bit        Muxes := 8     
-	   2 Input      8 Bit        Muxes := 400   
-	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 4     
-	   2 Input      3 Bit        Muxes := 7     
-	   3 Input      3 Bit        Muxes := 2     
-	   2 Input      2 Bit        Muxes := 2     
-	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 325   
-	   4 Input      1 Bit        Muxes := 192   
-	   6 Input      1 Bit        Muxes := 9     
+	   2 Input    128 Bit        Muxes := 5     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 15    
+	   2 Input      8 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 10    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -146,27 +92,22 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module process_wrapper 
+Module keyGenerator 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      4 Bit       Adders := 1     
-	   2 Input      3 Bit       Adders := 1     
 +---XORs : 
-	   2 Input    128 Bit         XORs := 1     
+	   2 Input     32 Bit         XORs := 5     
 +---Registers : 
-	              128 Bit    Registers := 1     
+	              128 Bit    Registers := 2     
+	               32 Bit    Registers := 6     
 	                4 Bit    Registers := 1     
-	                3 Bit    Registers := 2     
-	                1 Bit    Registers := 6     
+	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input    128 Bit        Muxes := 2     
-	   2 Input      4 Bit        Muxes := 2     
-	   2 Input      3 Bit        Muxes := 7     
-	   3 Input      3 Bit        Muxes := 2     
-	   2 Input      2 Bit        Muxes := 2     
-	   3 Input      2 Bit        Muxes := 1     
-	   6 Input      1 Bit        Muxes := 9     
-	   2 Input      1 Bit        Muxes := 3     
+	   2 Input    128 Bit        Muxes := 5     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 15    
+	   2 Input      1 Bit        Muxes := 10    
 Module mem 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -175,57 +116,6 @@ Detailed RTL Component Info :
 	               2K Bit         RAMs := 1     
 +---Muxes : 
 	   2 Input      8 Bit        Muxes := 1     
-Module S_box_wrapper 
-Detailed RTL Component Info : 
-+---Registers : 
-	              128 Bit    Registers := 1     
-Module shift_rows 
-Detailed RTL Component Info : 
-+---Registers : 
-	              128 Bit    Registers := 1     
-	               32 Bit    Registers := 4     
-	                8 Bit    Registers := 16    
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     32 Bit        Muxes := 8     
-	   2 Input      1 Bit        Muxes := 2     
-Module bit_8_crypto_mul 
-Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input      8 Bit         XORs := 4     
-+---Registers : 
-	                8 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      8 Bit        Muxes := 6     
-	   2 Input      1 Bit        Muxes := 5     
-	   4 Input      1 Bit        Muxes := 3     
-Module bit_32_crypto_mul 
-Detailed RTL Component Info : 
-+---XORs : 
-	   4 Input      8 Bit         XORs := 1     
-+---Registers : 
-	                8 Bit    Registers := 1     
-Module crypto_mul_32Bit_wrapper 
-Detailed RTL Component Info : 
-+---Registers : 
-	               32 Bit    Registers := 1     
-Module mix_columns 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      4 Bit       Adders := 1     
-+---Registers : 
-	              128 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 2     
-Module addRound_key 
-Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input    128 Bit         XORs := 1     
-+---Registers : 
-	              128 Bit    Registers := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -242,135 +132,53 @@ No constraint files found.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance 'i_15' (FD) to 'i_25'
-INFO: [Synth 8-3886] merging instance 'i_13' (FD) to 'i_25'
-INFO: [Synth 8-3886] merging instance 'i_12' (FD) to 'i_25'
-INFO: [Synth 8-3886] merging instance 'i_6' (FD) to 'i_25'
-INFO: [Synth 8-3886] merging instance 'i_25' (FD) to 'i_24'
-INFO: [Synth 8-3886] merging instance 'i_24' (FD) to 'i_23'
-INFO: [Synth 8-3886] merging instance 'i_23' (FD) to 'i_22'
-INFO: [Synth 8-3886] merging instance 'i_102' (FD) to 'i_110'
-INFO: [Synth 8-3886] merging instance 'i_101' (FD) to 'i_110'
-INFO: [Synth 8-3886] merging instance 'i_100' (FD) to 'i_110'
-INFO: [Synth 8-3886] merging instance 'i_99' (FD) to 'i_110'
-INFO: [Synth 8-3886] merging instance 'i_110' (FD) to 'i_109'
-INFO: [Synth 8-3886] merging instance 'i_109' (FD) to 'i_108'
-INFO: [Synth 8-3886] merging instance 'i_108' (FD) to 'i_107'
-INFO: [Synth 8-3886] merging instance 'i_187' (FD) to 'i_195'
-INFO: [Synth 8-3886] merging instance 'i_186' (FD) to 'i_195'
-INFO: [Synth 8-3886] merging instance 'i_185' (FD) to 'i_195'
-INFO: [Synth 8-3886] merging instance 'i_184' (FD) to 'i_195'
-INFO: [Synth 8-3886] merging instance 'i_195' (FD) to 'i_194'
-INFO: [Synth 8-3886] merging instance 'i_194' (FD) to 'i_193'
-INFO: [Synth 8-3886] merging instance 'i_193' (FD) to 'i_192'
-INFO: [Synth 8-3886] merging instance 'i_272' (FD) to 'i_280'
-INFO: [Synth 8-3886] merging instance 'i_271' (FD) to 'i_280'
-INFO: [Synth 8-3886] merging instance 'i_270' (FD) to 'i_280'
-INFO: [Synth 8-3886] merging instance 'i_269' (FD) to 'i_280'
-INFO: [Synth 8-3886] merging instance 'i_280' (FD) to 'i_279'
-INFO: [Synth 8-3886] merging instance 'i_279' (FD) to 'i_278'
-INFO: [Synth 8-3886] merging instance 'i_278' (FD) to 'i_277'
-INFO: [Synth 8-3886] merging instance 'i_85' (FD) to 'i_93'
-INFO: [Synth 8-3886] merging instance 'i_84' (FD) to 'i_93'
-INFO: [Synth 8-3886] merging instance 'i_83' (FD) to 'i_93'
-INFO: [Synth 8-3886] merging instance 'i_82' (FD) to 'i_93'
-INFO: [Synth 8-3886] merging instance 'i_93' (FD) to 'i_92'
-INFO: [Synth 8-3886] merging instance 'i_92' (FD) to 'i_91'
-INFO: [Synth 8-3886] merging instance 'i_91' (FD) to 'i_90'
-INFO: [Synth 8-3886] merging instance 'i_170' (FD) to 'i_178'
-INFO: [Synth 8-3886] merging instance 'i_169' (FD) to 'i_178'
-INFO: [Synth 8-3886] merging instance 'i_168' (FD) to 'i_178'
-INFO: [Synth 8-3886] merging instance 'i_167' (FD) to 'i_178'
-INFO: [Synth 8-3886] merging instance 'i_178' (FD) to 'i_177'
-INFO: [Synth 8-3886] merging instance 'i_177' (FD) to 'i_176'
-INFO: [Synth 8-3886] merging instance 'i_176' (FD) to 'i_175'
-INFO: [Synth 8-3886] merging instance 'i_255' (FD) to 'i_263'
-INFO: [Synth 8-3886] merging instance 'i_254' (FD) to 'i_263'
-INFO: [Synth 8-3886] merging instance 'i_253' (FD) to 'i_263'
-INFO: [Synth 8-3886] merging instance 'i_252' (FD) to 'i_263'
-INFO: [Synth 8-3886] merging instance 'i_263' (FD) to 'i_262'
-INFO: [Synth 8-3886] merging instance 'i_262' (FD) to 'i_261'
-INFO: [Synth 8-3886] merging instance 'i_261' (FD) to 'i_260'
-INFO: [Synth 8-3886] merging instance 'i_68' (FD) to 'i_76'
-INFO: [Synth 8-3886] merging instance 'i_67' (FD) to 'i_76'
-INFO: [Synth 8-3886] merging instance 'i_66' (FD) to 'i_76'
-INFO: [Synth 8-3886] merging instance 'i_65' (FD) to 'i_76'
-INFO: [Synth 8-3886] merging instance 'i_76' (FD) to 'i_75'
-INFO: [Synth 8-3886] merging instance 'i_75' (FD) to 'i_74'
-INFO: [Synth 8-3886] merging instance 'i_74' (FD) to 'i_73'
-INFO: [Synth 8-3886] merging instance 'i_153' (FD) to 'i_161'
-INFO: [Synth 8-3886] merging instance 'i_152' (FD) to 'i_161'
-INFO: [Synth 8-3886] merging instance 'i_151' (FD) to 'i_161'
-INFO: [Synth 8-3886] merging instance 'i_150' (FD) to 'i_161'
-INFO: [Synth 8-3886] merging instance 'i_161' (FD) to 'i_160'
-INFO: [Synth 8-3886] merging instance 'i_160' (FD) to 'i_159'
-INFO: [Synth 8-3886] merging instance 'i_159' (FD) to 'i_158'
-INFO: [Synth 8-3886] merging instance 'i_238' (FD) to 'i_246'
-INFO: [Synth 8-3886] merging instance 'i_237' (FD) to 'i_246'
-INFO: [Synth 8-3886] merging instance 'i_236' (FD) to 'i_246'
-INFO: [Synth 8-3886] merging instance 'i_235' (FD) to 'i_246'
-INFO: [Synth 8-3886] merging instance 'i_246' (FD) to 'i_245'
-INFO: [Synth 8-3886] merging instance 'i_245' (FD) to 'i_244'
-INFO: [Synth 8-3886] merging instance 'i_244' (FD) to 'i_243'
-INFO: [Synth 8-3886] merging instance 'i_51' (FD) to 'i_59'
-INFO: [Synth 8-3886] merging instance 'i_50' (FD) to 'i_59'
-INFO: [Synth 8-3886] merging instance 'i_49' (FD) to 'i_59'
-INFO: [Synth 8-3886] merging instance 'i_48' (FD) to 'i_59'
-INFO: [Synth 8-3886] merging instance 'i_59' (FD) to 'i_58'
-INFO: [Synth 8-3886] merging instance 'i_58' (FD) to 'i_57'
-INFO: [Synth 8-3886] merging instance 'i_57' (FD) to 'i_56'
-INFO: [Synth 8-3886] merging instance 'i_136' (FD) to 'i_144'
-INFO: [Synth 8-3886] merging instance 'i_135' (FD) to 'i_144'
-INFO: [Synth 8-3886] merging instance 'i_134' (FD) to 'i_144'
-INFO: [Synth 8-3886] merging instance 'i_133' (FD) to 'i_144'
-INFO: [Synth 8-3886] merging instance 'i_144' (FD) to 'i_143'
-INFO: [Synth 8-3886] merging instance 'i_143' (FD) to 'i_142'
-INFO: [Synth 8-3886] merging instance 'i_142' (FD) to 'i_141'
-INFO: [Synth 8-3886] merging instance 'i_221' (FD) to 'i_229'
-INFO: [Synth 8-3886] merging instance 'i_220' (FD) to 'i_229'
-INFO: [Synth 8-3886] merging instance 'i_219' (FD) to 'i_229'
-INFO: [Synth 8-3886] merging instance 'i_218' (FD) to 'i_229'
-INFO: [Synth 8-3886] merging instance 'i_229' (FD) to 'i_228'
-INFO: [Synth 8-3886] merging instance 'i_228' (FD) to 'i_227'
-INFO: [Synth 8-3886] merging instance 'i_227' (FD) to 'i_226'
-INFO: [Synth 8-3886] merging instance 'i_34' (FD) to 'i_42'
-INFO: [Synth 8-3886] merging instance 'i_33' (FD) to 'i_42'
-INFO: [Synth 8-3886] merging instance 'i_32' (FD) to 'i_42'
-INFO: [Synth 8-3886] merging instance 'i_31' (FD) to 'i_42'
-INFO: [Synth 8-3886] merging instance 'i_42' (FD) to 'i_41'
-INFO: [Synth 8-3886] merging instance 'i_41' (FD) to 'i_40'
-INFO: [Synth 8-3886] merging instance 'i_40' (FD) to 'i_39'
-INFO: [Synth 8-3886] merging instance 'i_119' (FD) to 'i_127'
-INFO: [Synth 8-3886] merging instance 'i_118' (FD) to 'i_127'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'i_10' (FD) to 'i_18'
+INFO: [Synth 8-3886] merging instance 'i_9' (FD) to 'i_18'
+INFO: [Synth 8-3886] merging instance 'i_8' (FD) to 'i_18'
+INFO: [Synth 8-3886] merging instance 'i_7' (FD) to 'i_18'
+INFO: [Synth 8-3886] merging instance 'i_18' (FD) to 'i_17'
+INFO: [Synth 8-3886] merging instance 'i_17' (FD) to 'i_16'
+INFO: [Synth 8-3886] merging instance 'i_16' (FD) to 'i_15'
+INFO: [Synth 8-3886] merging instance 'i_27' (FD) to 'i_35'
+INFO: [Synth 8-3886] merging instance 'i_26' (FD) to 'i_35'
+INFO: [Synth 8-3886] merging instance 'i_25' (FD) to 'i_35'
+INFO: [Synth 8-3886] merging instance 'i_24' (FD) to 'i_35'
+INFO: [Synth 8-3886] merging instance 'i_35' (FD) to 'i_34'
+INFO: [Synth 8-3886] merging instance 'i_34' (FD) to 'i_33'
+INFO: [Synth 8-3886] merging instance 'i_33' (FD) to 'i_32'
+INFO: [Synth 8-3886] merging instance 'i_44' (FD) to 'i_52'
+INFO: [Synth 8-3886] merging instance 'i_43' (FD) to 'i_52'
+INFO: [Synth 8-3886] merging instance 'i_42' (FD) to 'i_52'
+INFO: [Synth 8-3886] merging instance 'i_41' (FD) to 'i_52'
+INFO: [Synth 8-3886] merging instance 'i_52' (FD) to 'i_51'
+INFO: [Synth 8-3886] merging instance 'i_51' (FD) to 'i_50'
+INFO: [Synth 8-3886] merging instance 'i_50' (FD) to 'i_49'
+INFO: [Synth 8-3886] merging instance 'i_61' (FD) to 'i_69'
+INFO: [Synth 8-3886] merging instance 'i_60' (FD) to 'i_69'
+INFO: [Synth 8-3886] merging instance 'i_59' (FD) to 'i_69'
+INFO: [Synth 8-3886] merging instance 'i_58' (FD) to 'i_69'
+INFO: [Synth 8-3886] merging instance 'i_69' (FD) to 'i_68'
+INFO: [Synth 8-3886] merging instance 'i_68' (FD) to 'i_67'
+INFO: [Synth 8-3886] merging instance 'i_67' (FD) to 'i_66'
+INFO: [Synth 8-3886] merging instance 'i_15' (FD) to 'i_32'
+INFO: [Synth 8-3886] merging instance 'i_32' (FD) to 'i_49'
+INFO: [Synth 8-3886] merging instance 'i_49' (FD) to 'i_66'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 637.480 ; gain = 393.277
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 621.625 ; gain = 377.527
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Distributed RAM: Preliminary Mapping  Report (see note below)
-+----------------+--------------------------------+-----------+----------------------+-----------------+
-|Module Name     | RTL Object                     | Inference | Size (Depth x Width) | Primitives      | 
-+----------------+--------------------------------+-----------+----------------------+-----------------+
-|process_wrapper | i0/genblk1[0].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[1].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[2].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[3].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[4].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[5].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[6].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[7].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[8].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[9].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[10].i/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[11].i/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[12].i/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[13].i/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[14].i/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[15].i/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
-+----------------+--------------------------------+-----------+----------------------+-----------------+
++-------------+------------------+-----------+----------------------+-----------------+
+|Module Name  | RTL Object       | Inference | Size (Depth x Width) | Primitives      | 
++-------------+------------------+-----------+----------------------+-----------------+
+|keyGenerator | i0/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
+|keyGenerator | i1/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
+|keyGenerator | i2/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
+|keyGenerator | i3/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
++-------------+------------------+-----------+----------------------+-----------------+
 
 Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 ---------------------------------------------------------------------------------
@@ -387,33 +195,21 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 637.480 ; gain = 393.277
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 621.625 ; gain = 377.527
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Distributed RAM: Final Mapping  Report
-+----------------+--------------------------------+-----------+----------------------+-----------------+
-|Module Name     | RTL Object                     | Inference | Size (Depth x Width) | Primitives      | 
-+----------------+--------------------------------+-----------+----------------------+-----------------+
-|process_wrapper | i0/genblk1[0].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[1].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[2].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[3].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[4].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[5].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[6].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[7].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[8].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[9].i/mem_i/mem_reg  | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[10].i/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[11].i/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[12].i/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[13].i/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[14].i/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
-|process_wrapper | i0/genblk1[15].i/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
-+----------------+--------------------------------+-----------+----------------------+-----------------+
++-------------+------------------+-----------+----------------------+-----------------+
+|Module Name  | RTL Object       | Inference | Size (Depth x Width) | Primitives      | 
++-------------+------------------+-----------+----------------------+-----------------+
+|keyGenerator | i0/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
+|keyGenerator | i1/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
+|keyGenerator | i2/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
+|keyGenerator | i3/mem_i/mem_reg | Implied   | 256 x 8              | RAM256X1S x 8   | 
++-------------+------------------+-----------+----------------------+-----------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
@@ -428,7 +224,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:42 . Memory (MB): peak = 639.027 ; gain = 394.824
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 622.629 ; gain = 378.531
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -452,7 +248,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:43 . Memory (MB): peak = 639.027 ; gain = 394.824
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 622.629 ; gain = 378.531
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -465,7 +261,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:43 . Memory (MB): peak = 639.027 ; gain = 394.824
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 622.629 ; gain = 378.531
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -477,25 +273,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:44 . Memory (MB): peak = 639.027 ; gain = 394.824
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 622.629 ; gain = 378.531
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 639.027 ; gain = 394.824
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 622.629 ; gain = 378.531
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 639.027 ; gain = 394.824
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 622.629 ; gain = 378.531
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 639.027 ; gain = 394.824
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 622.629 ; gain = 378.531
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -512,168 +308,53 @@ Report Cell Usage:
 |      |Cell      |Count |
 +------+----------+------+
 |1     |BUFG      |     1|
-|2     |LUT1      |   129|
-|3     |LUT2      |   137|
-|4     |LUT3      |   200|
-|5     |LUT4      |   132|
-|6     |LUT5      |   333|
-|7     |LUT6      |   338|
-|8     |RAM256X1S |   128|
-|9     |FDCE      |   142|
-|10    |FDPE      |     5|
-|11    |FDRE      |  1928|
-|12    |LDC       |     3|
-|13    |IBUF      |   259|
-|14    |OBUF      |   128|
+|2     |LUT1      |     2|
+|3     |LUT2      |    68|
+|4     |LUT3      |    65|
+|5     |LUT4      |    35|
+|6     |LUT5      |    50|
+|7     |LUT6      |    56|
+|8     |RAM256X1S |    32|
+|9     |FDRE      |   549|
+|10    |FDSE      |     2|
+|11    |IBUF      |   131|
+|12    |OBUF      |   128|
 +------+----------+------+
 
 Report Instance Areas: 
-+------+--------------------+---------------------------+------+
-|      |Instance            |Module                     |Cells |
-+------+--------------------+---------------------------+------+
-|1     |top                 |                           |  3863|
-|2     |  i0                |S_box_wrapper              |   784|
-|3     |    \genblk1[0].i   |S_box_layer                |    40|
-|4     |      mem_i         |mem_110                    |    24|
-|5     |    \genblk1[10].i  |S_box_layer_81             |    40|
-|6     |      mem_i         |mem_109                    |    24|
-|7     |    \genblk1[11].i  |S_box_layer_82             |    40|
-|8     |      mem_i         |mem_108                    |    24|
-|9     |    \genblk1[12].i  |S_box_layer_83             |    40|
-|10    |      mem_i         |mem_107                    |    24|
-|11    |    \genblk1[13].i  |S_box_layer_84             |    40|
-|12    |      mem_i         |mem_106                    |    24|
-|13    |    \genblk1[14].i  |S_box_layer_85             |    40|
-|14    |      mem_i         |mem_105                    |    24|
-|15    |    \genblk1[15].i  |S_box_layer_86             |    40|
-|16    |      mem_i         |mem_104                    |    24|
-|17    |    \genblk1[1].i   |S_box_layer_87             |    40|
-|18    |      mem_i         |mem_103                    |    24|
-|19    |    \genblk1[2].i   |S_box_layer_88             |    40|
-|20    |      mem_i         |mem_102                    |    24|
-|21    |    \genblk1[3].i   |S_box_layer_89             |    40|
-|22    |      mem_i         |mem_101                    |    24|
-|23    |    \genblk1[4].i   |S_box_layer_90             |    40|
-|24    |      mem_i         |mem_100                    |    24|
-|25    |    \genblk1[5].i   |S_box_layer_91             |    40|
-|26    |      mem_i         |mem_99                     |    24|
-|27    |    \genblk1[6].i   |S_box_layer_92             |    40|
-|28    |      mem_i         |mem_98                     |    24|
-|29    |    \genblk1[7].i   |S_box_layer_93             |    40|
-|30    |      mem_i         |mem_97                     |    24|
-|31    |    \genblk1[8].i   |S_box_layer_94             |    40|
-|32    |      mem_i         |mem_96                     |    24|
-|33    |    \genblk1[9].i   |S_box_layer_95             |    40|
-|34    |      mem_i         |mem                        |    24|
-|35    |  i1                |shift_rows                 |   533|
-|36    |  i2                |mix_columns                |  1692|
-|37    |    i0              |crypto_mul_32Bit_wrapper   |   388|
-|38    |      i0            |bit_32_crypto_mul_61       |    88|
-|39    |        i0          |bit_8_crypto_mul_77        |    18|
-|40    |        i1          |bit_8_crypto_mul_78        |    18|
-|41    |        i2          |bit_8_crypto_mul_79        |    26|
-|42    |        i3          |bit_8_crypto_mul_80        |    18|
-|43    |      i1            |bit_32_crypto_mul_62       |    88|
-|44    |        i0          |bit_8_crypto_mul_73        |    18|
-|45    |        i1          |bit_8_crypto_mul_74        |    18|
-|46    |        i2          |bit_8_crypto_mul_75        |    26|
-|47    |        i3          |bit_8_crypto_mul_76        |    18|
-|48    |      i2            |bit_32_crypto_mul_63       |    92|
-|49    |        i0          |bit_8_crypto_mul_69        |    19|
-|50    |        i1          |bit_8_crypto_mul_70        |    19|
-|51    |        i2          |bit_8_crypto_mul_71        |    27|
-|52    |        i3          |bit_8_crypto_mul_72        |    19|
-|53    |      i3            |bit_32_crypto_mul_64       |    88|
-|54    |        i0          |bit_8_crypto_mul_65        |    18|
-|55    |        i1          |bit_8_crypto_mul_66        |    18|
-|56    |        i2          |bit_8_crypto_mul_67        |    26|
-|57    |        i3          |bit_8_crypto_mul_68        |    18|
-|58    |    i1              |crypto_mul_32Bit_wrapper_0 |   388|
-|59    |      i0            |bit_32_crypto_mul_41       |    88|
-|60    |        i0          |bit_8_crypto_mul_57        |    18|
-|61    |        i1          |bit_8_crypto_mul_58        |    18|
-|62    |        i2          |bit_8_crypto_mul_59        |    26|
-|63    |        i3          |bit_8_crypto_mul_60        |    18|
-|64    |      i1            |bit_32_crypto_mul_42       |    88|
-|65    |        i0          |bit_8_crypto_mul_53        |    18|
-|66    |        i1          |bit_8_crypto_mul_54        |    18|
-|67    |        i2          |bit_8_crypto_mul_55        |    26|
-|68    |        i3          |bit_8_crypto_mul_56        |    18|
-|69    |      i2            |bit_32_crypto_mul_43       |    92|
-|70    |        i0          |bit_8_crypto_mul_49        |    19|
-|71    |        i1          |bit_8_crypto_mul_50        |    19|
-|72    |        i2          |bit_8_crypto_mul_51        |    27|
-|73    |        i3          |bit_8_crypto_mul_52        |    19|
-|74    |      i3            |bit_32_crypto_mul_44       |    88|
-|75    |        i0          |bit_8_crypto_mul_45        |    18|
-|76    |        i1          |bit_8_crypto_mul_46        |    18|
-|77    |        i2          |bit_8_crypto_mul_47        |    26|
-|78    |        i3          |bit_8_crypto_mul_48        |    18|
-|79    |    i2              |crypto_mul_32Bit_wrapper_1 |   392|
-|80    |      i0            |bit_32_crypto_mul_21       |    89|
-|81    |        i0          |bit_8_crypto_mul_37        |    18|
-|82    |        i1          |bit_8_crypto_mul_38        |    19|
-|83    |        i2          |bit_8_crypto_mul_39        |    26|
-|84    |        i3          |bit_8_crypto_mul_40        |    18|
-|85    |      i1            |bit_32_crypto_mul_22       |    88|
-|86    |        i0          |bit_8_crypto_mul_33        |    18|
-|87    |        i1          |bit_8_crypto_mul_34        |    18|
-|88    |        i2          |bit_8_crypto_mul_35        |    26|
-|89    |        i3          |bit_8_crypto_mul_36        |    18|
-|90    |      i2            |bit_32_crypto_mul_23       |    92|
-|91    |        i0          |bit_8_crypto_mul_29        |    19|
-|92    |        i1          |bit_8_crypto_mul_30        |    19|
-|93    |        i2          |bit_8_crypto_mul_31        |    27|
-|94    |        i3          |bit_8_crypto_mul_32        |    19|
-|95    |      i3            |bit_32_crypto_mul_24       |    88|
-|96    |        i0          |bit_8_crypto_mul_25        |    18|
-|97    |        i1          |bit_8_crypto_mul_26        |    18|
-|98    |        i2          |bit_8_crypto_mul_27        |    26|
-|99    |        i3          |bit_8_crypto_mul_28        |    18|
-|100   |    i3              |crypto_mul_32Bit_wrapper_2 |   388|
-|101   |      i0            |bit_32_crypto_mul          |    88|
-|102   |        i0          |bit_8_crypto_mul_17        |    18|
-|103   |        i1          |bit_8_crypto_mul_18        |    18|
-|104   |        i2          |bit_8_crypto_mul_19        |    26|
-|105   |        i3          |bit_8_crypto_mul_20        |    18|
-|106   |      i1            |bit_32_crypto_mul_3        |    88|
-|107   |        i0          |bit_8_crypto_mul_13        |    18|
-|108   |        i1          |bit_8_crypto_mul_14        |    18|
-|109   |        i2          |bit_8_crypto_mul_15        |    26|
-|110   |        i3          |bit_8_crypto_mul_16        |    18|
-|111   |      i2            |bit_32_crypto_mul_4        |    92|
-|112   |        i0          |bit_8_crypto_mul_9         |    19|
-|113   |        i1          |bit_8_crypto_mul_10        |    19|
-|114   |        i2          |bit_8_crypto_mul_11        |    27|
-|115   |        i3          |bit_8_crypto_mul_12        |    19|
-|116   |      i3            |bit_32_crypto_mul_5        |    88|
-|117   |        i0          |bit_8_crypto_mul           |    18|
-|118   |        i1          |bit_8_crypto_mul_6         |    18|
-|119   |        i2          |bit_8_crypto_mul_7         |    26|
-|120   |        i3          |bit_8_crypto_mul_8         |    18|
-|121   |  i3                |addRound_key               |   272|
-+------+--------------------+---------------------------+------+
++------+----------+--------------+------+
+|      |Instance  |Module        |Cells |
++------+----------+--------------+------+
+|1     |top       |              |  1119|
+|2     |  i0      |S_box_layer   |    56|
+|3     |    mem_i |mem_5         |    40|
+|4     |  i1      |S_box_layer_0 |    56|
+|5     |    mem_i |mem_4         |    40|
+|6     |  i2      |S_box_layer_1 |    56|
+|7     |    mem_i |mem_3         |    40|
+|8     |  i3      |S_box_layer_2 |    56|
+|9     |    mem_i |mem           |    40|
++------+----------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 639.027 ; gain = 394.824
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 622.629 ; gain = 378.531
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 639.027 ; gain = 394.824
-Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 639.027 ; gain = 394.824
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 622.629 ; gain = 378.531
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 622.629 ; gain = 378.531
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 390 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 163 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 131 instances were transformed.
-  LDC => LDCE: 3 instances
-  RAM256X1S => RAM256X1S (MUXF7, MUXF7, MUXF8, RAMS64E, RAMS64E, RAMS64E, RAMS64E): 128 instances
+  A total of 32 instances were transformed.
+  RAM256X1S => RAM256X1S (MUXF7, MUXF7, MUXF8, RAMS64E, RAMS64E, RAMS64E, RAMS64E): 32 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-161 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+57 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:51 . Memory (MB): peak = 721.234 ; gain = 489.711
-INFO: [Common 17-1381] The checkpoint 'C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/synth_2/process_wrapper.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file process_wrapper_utilization_synth.rpt -pb shift_rows_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.150 . Memory (MB): peak = 721.234 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Apr  2 13:43:34 2019...
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 709.598 ; gain = 478.508
+INFO: [Common 17-1381] The checkpoint 'C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/synth_2/keyGenerator.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file keyGenerator_utilization_synth.rpt -pb shift_rows_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.105 . Memory (MB): peak = 709.598 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  2 15:55:32 2019...

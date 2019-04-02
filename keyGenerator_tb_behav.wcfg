@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="keyGenerator_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="keyGenerator_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="833000001fs"></ZoomEndTime>
+      <Cursor1Time time="125000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="79"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/keyGenerator_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyGenerator_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyGenerator_tb/key_in" type="array">
+      <obj_property name="ElementShortName">key_in[127:0]</obj_property>
+      <obj_property name="ObjectShortName">key_in[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyGenerator_tb/key_gen" type="logic">
+      <obj_property name="ElementShortName">key_gen</obj_property>
+      <obj_property name="ObjectShortName">key_gen</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyGenerator_tb/key_out" type="array">
+      <obj_property name="ElementShortName">key_out[127:0]</obj_property>
+      <obj_property name="ObjectShortName">key_out[127:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyGenerator_tb/uut/s_box_res0" type="array">
+      <obj_property name="ElementShortName">s_box_res0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_box_res0[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyGenerator_tb/uut/s_box_res1" type="array">
+      <obj_property name="ElementShortName">s_box_res1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_box_res1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyGenerator_tb/uut/s_box_res2" type="array">
+      <obj_property name="ElementShortName">s_box_res2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_box_res2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyGenerator_tb/uut/s_box_res3" type="array">
+      <obj_property name="ElementShortName">s_box_res3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_box_res3[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyGenerator_tb/uut/s_box_result" type="array">
+      <obj_property name="ElementShortName">s_box_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_box_result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyGenerator_tb/uut/key_vals0" type="array">
+      <obj_property name="ElementShortName">key_vals0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">key_vals0[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyGenerator_tb/uut/key_vals1" type="array">
+      <obj_property name="ElementShortName">key_vals1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">key_vals1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyGenerator_tb/uut/key_vals2" type="array">
+      <obj_property name="ElementShortName">key_vals2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">key_vals2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyGenerator_tb/uut/key_vals3" type="array">
+      <obj_property name="ElementShortName">key_vals3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">key_vals3[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyGenerator_tb/uut/temp_key_vals3" type="array">
+      <obj_property name="ElementShortName">temp_key_vals3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_key_vals3[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyGenerator_tb/uut/cntr" type="array">
+      <obj_property name="ElementShortName">cntr[3:0]</obj_property>
+      <obj_property name="ObjectShortName">cntr[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyGenerator_tb/uut/begin_s_layer" type="logic">
+      <obj_property name="ElementShortName">begin_s_layer</obj_property>
+      <obj_property name="ObjectShortName">begin_s_layer</obj_property>
+   </wvobject>
+   <wvobject fp_name="/keyGenerator_tb/uut/temp_out" type="array">
+      <obj_property name="ElementShortName">temp_out[127:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_out[127:0]</obj_property>
+   </wvobject>
+</wave_config>

@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log process_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source process_wrapper.tcl
+EAStep vivado -log keyGenerator.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source keyGenerator.tcl
