@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_2" LaunchPart="xc7a200tfbg676-2" LaunchTime="1554163404">
   <File Type="PA-TCL" Name="shift_rows.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="shift_rows_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="shift_rows_reports.tcl"/>
   <File Type="RDS-RDS" Name="shift_rows.vds"/>
   <File Type="RDS-UTIL" Name="shift_rows_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="shift_rows_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="shift_rows.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="shift_rows_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="shift_rows_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/shift_rows.v">
@@ -115,9 +112,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Strategy_1" Flow="Vivado Synthesis 2017">
-      <Desc>accltr</Desc>
-    </StratHandle>
+    <StratHandle Name="Strategy_1" Flow="Vivado Synthesis 2017"/>
     <Step Id="synth_design">
       <Option Id="MaxDsp">0</Option>
     </Step>

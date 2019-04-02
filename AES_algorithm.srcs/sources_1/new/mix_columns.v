@@ -29,8 +29,8 @@ module mix_columns(
     );
     
     wire [31:0] wrapper_out0, wrapper_out1, wrapper_out2, wrapper_out3;
-    reg [3:0] cntr = {4{1'b0}};
-    reg start = 1'b0;
+    (*keep = "true"*) reg [3:0] cntr = {4{1'b0}};
+    (*keep = "true"*) reg start = 1'b0;
     
     crypto_mul_32Bit_wrapper i0(
                                 .clk(clk),

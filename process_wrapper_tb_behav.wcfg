@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="process_wrapper_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="process_wrapper_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="5000000001fs"></ZoomEndTime>
+      <Cursor1Time time="20008000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="87"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="27" />
+   <wvobject fp_name="/process_wrapper_tb/uut/currentState" type="array">
+      <obj_property name="ElementShortName">currentState[2:0]</obj_property>
+      <obj_property name="ObjectShortName">currentState[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/nextState" type="array">
+      <obj_property name="ElementShortName">nextState[2:0]</obj_property>
+      <obj_property name="ObjectShortName">nextState[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/trigger" type="logic">
+      <obj_property name="ElementShortName">trigger</obj_property>
+      <obj_property name="ObjectShortName">trigger</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/cypher_text" type="array">
+      <obj_property name="ElementShortName">cypher_text[127:0]</obj_property>
+      <obj_property name="ObjectShortName">cypher_text[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/plain_text" type="array">
+      <obj_property name="ElementShortName">plain_text[127:0]</obj_property>
+      <obj_property name="ObjectShortName">plain_text[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/initial_key" type="array">
+      <obj_property name="ElementShortName">initial_key[127:0]</obj_property>
+      <obj_property name="ObjectShortName">initial_key[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/s_box_layer_out" type="array">
+      <obj_property name="ElementShortName">s_box_layer_out[127:0]</obj_property>
+      <obj_property name="ObjectShortName">s_box_layer_out[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/shift_rows_out" type="array">
+      <obj_property name="ElementShortName">shift_rows_out[127:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_rows_out[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/mix_cols_out" type="array">
+      <obj_property name="ElementShortName">mix_cols_out[127:0]</obj_property>
+      <obj_property name="ObjectShortName">mix_cols_out[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/buffer_out" type="array">
+      <obj_property name="ElementShortName">buffer_out[127:0]</obj_property>
+      <obj_property name="ObjectShortName">buffer_out[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/buffer_in" type="array">
+      <obj_property name="ElementShortName">buffer_in[127:0]</obj_property>
+      <obj_property name="ObjectShortName">buffer_in[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/initial_in" type="array">
+      <obj_property name="ElementShortName">initial_in[127:0]</obj_property>
+      <obj_property name="ObjectShortName">initial_in[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/start_byteSub_reg" type="logic">
+      <obj_property name="ElementShortName">start_byteSub_reg</obj_property>
+      <obj_property name="ObjectShortName">start_byteSub_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/start_shiftRows_reg" type="logic">
+      <obj_property name="ElementShortName">start_shiftRows_reg</obj_property>
+      <obj_property name="ObjectShortName">start_shiftRows_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/start_mixCols_reg" type="logic">
+      <obj_property name="ElementShortName">start_mixCols_reg</obj_property>
+      <obj_property name="ObjectShortName">start_mixCols_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/start_addKey_reg" type="logic">
+      <obj_property name="ElementShortName">start_addKey_reg</obj_property>
+      <obj_property name="ObjectShortName">start_addKey_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/isLayer_first" type="logic">
+      <obj_property name="ElementShortName">isLayer_first</obj_property>
+      <obj_property name="ObjectShortName">isLayer_first</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/isLayer_last" type="logic">
+      <obj_property name="ElementShortName">isLayer_last</obj_property>
+      <obj_property name="ObjectShortName">isLayer_last</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/fsm_counter" type="array">
+      <obj_property name="ElementShortName">fsm_counter[2:0]</obj_property>
+      <obj_property name="ObjectShortName">fsm_counter[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/fsm_counter_val" type="array">
+      <obj_property name="ElementShortName">fsm_counter_val[2:0]</obj_property>
+      <obj_property name="ObjectShortName">fsm_counter_val[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/iteration_counter" type="array">
+      <obj_property name="ElementShortName">iteration_counter[3:0]</obj_property>
+      <obj_property name="ObjectShortName">iteration_counter[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/temp_done" type="logic">
+      <obj_property name="ElementShortName">temp_done</obj_property>
+      <obj_property name="ObjectShortName">temp_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/fsm_counter_en" type="logic">
+      <obj_property name="ElementShortName">fsm_counter_en</obj_property>
+      <obj_property name="ObjectShortName">fsm_counter_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/fsm_counter_rst" type="logic">
+      <obj_property name="ElementShortName">fsm_counter_rst</obj_property>
+      <obj_property name="ObjectShortName">fsm_counter_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/load_fsm_counter" type="logic">
+      <obj_property name="ElementShortName">load_fsm_counter</obj_property>
+      <obj_property name="ObjectShortName">load_fsm_counter</obj_property>
+   </wvobject>
+</wave_config>
