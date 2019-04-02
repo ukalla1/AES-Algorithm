@@ -73,7 +73,6 @@ module mix_columns(
             end
             else if(cntr > 0) begin
                 cntr <= cntr - 1'b1;
-                start <= 1'b1;
             end
             else begin
                 start <= 1'b0;

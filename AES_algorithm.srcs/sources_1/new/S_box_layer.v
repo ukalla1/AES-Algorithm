@@ -65,8 +65,8 @@ module S_box_layer(
                 upper_bits <= data_in[7:4];
             end
             else begin
-                lower_bits <= lower_bits;
-                upper_bits <= upper_bits;
+                lower_bits <= {4{1'bz}};
+                upper_bits <= {4{1'bz}};
             end
         end
     end

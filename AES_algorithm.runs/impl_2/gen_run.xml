@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_2" LaunchPart="xc7a200tfbg676-2" LaunchTime="1554163404">
-  <File Type="ROUTE-PWR" Name="shift_rows_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="shift_rows.tcl"/>
-  <File Type="PWROPT-DCP" Name="shift_rows_pwropt.dcp"/>
+<GenRun Id="impl_2" LaunchPart="xc7a200tfbg676-2" LaunchTime="1554227035">
+  <File Type="PWROPT-DCP" Name="process_wrapper_pwropt.dcp"/>
+  <File Type="ROUTE-PWR" Name="process_wrapper_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="process_wrapper.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="shift_rows_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="shift_rows_reports.tcl"/>
-  <File Type="BG-DRC" Name="shift_rows.drc"/>
-  <File Type="OPT-HWDEF" Name="shift_rows.hwdef"/>
-  <File Type="OPT-DCP" Name="shift_rows_opt.dcp"/>
-  <File Type="OPT-DRC" Name="shift_rows_drc_opted.rpt"/>
-  <File Type="PLACE-DCP" Name="shift_rows_placed.dcp"/>
-  <File Type="PLACE-IO" Name="shift_rows_io_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="shift_rows_utilization_placed.rpt"/>
+  <File Type="REPORTS-TCL" Name="process_wrapper_reports.tcl"/>
+  <File Type="BG-DRC" Name="process_wrapper.drc"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="process_wrapper_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="process_wrapper_timing_summary_init.rpt"/>
+  <File Type="OPT-HWDEF" Name="process_wrapper.hwdef"/>
+  <File Type="OPT-DCP" Name="process_wrapper_opt.dcp"/>
+  <File Type="OPT-DRC" Name="process_wrapper_drc_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="process_wrapper_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="process_wrapper_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="process_wrapper_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="process_wrapper_placed.dcp"/>
+  <File Type="PLACE-IO" Name="process_wrapper_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="process_wrapper_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="process_wrapper_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="shift_rows_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="shift_rows_control_sets_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="shift_rows_incremental_reuse_pre_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="shift_rows_postplace_pwropt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="shift_rows_physopt.dcp"/>
-  <File Type="BG-BIT" Name="shift_rows.bit"/>
-  <File Type="ROUTE-ERROR-DCP" Name="shift_rows_routed_error.dcp"/>
-  <File Type="ROUTE-DCP" Name="shift_rows_routed.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="shift_rows_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="shift_rows_drc_routed.rpt"/>
+  <File Type="PLACE-CTRL" Name="process_wrapper_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="process_wrapper_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="process_wrapper_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="process_wrapper_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="process_wrapper_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="process_wrapper_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="process_wrapper_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="process_wrapper_drc_physopted.rpt"/>
+  <File Type="BG-BIT" Name="process_wrapper.bit"/>
+  <File Type="PHYSOPT-TIMING" Name="process_wrapper_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="process_wrapper_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="process_wrapper_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="process_wrapper_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="process_wrapper_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="shift_rows_drc_routed.pb"/>
+  <File Type="BITSTR-MSK" Name="process_wrapper.msk"/>
   <File Type="ROUTE-DRC-RPX" Name="shift_rows_drc_routed.rpx"/>
-  <File Type="BITSTR-MSK" Name="shift_rows.msk"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="shift_rows_methodology_drc_routed.rpt"/>
-  <File Type="BG-BGN" Name="shift_rows.bgn"/>
+  <File Type="BG-BGN" Name="process_wrapper.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="process_wrapper_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-RBT" Name="process_wrapper.rbt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="shift_rows_methodology_drc_routed.rpx"/>
-  <File Type="BITSTR-RBT" Name="shift_rows.rbt"/>
+  <File Type="BG-BIN" Name="process_wrapper.bin"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="shift_rows_methodology_drc_routed.pb"/>
-  <File Type="BG-BIN" Name="shift_rows.bin"/>
   <File Type="ROUTE-PWR-RPX" Name="shift_rows_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="shift_rows_route_status.rpt"/>
+  <File Type="ROUTE-STATUS" Name="process_wrapper_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="shift_rows_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="shift_rows_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="shift_rows_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="process_wrapper_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="process_wrapper_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="shift_rows_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-CLK" Name="shift_rows_clock_utilization_routed.rpt"/>
-  <File Type="RDI-RDI" Name="shift_rows.vdi"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="shift_rows_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="shift_rows_postroute_physopt_bb.dcp"/>
-  <File Type="BITSTR-NKY" Name="shift_rows.nky"/>
-  <File Type="BITSTR-BMM" Name="shift_rows_bd.bmm"/>
-  <File Type="BITSTR-MMI" Name="shift_rows.mmi"/>
-  <File Type="BITSTR-LTX" Name="shift_rows.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="shift_rows.sysdef"/>
+  <File Type="ROUTE-SIMILARITY" Name="process_wrapper_incremental_reuse_routed.rpt"/>
+  <File Type="RDI-RDI" Name="process_wrapper.vdi"/>
+  <File Type="ROUTE-CLK" Name="process_wrapper_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="process_wrapper_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="process_wrapper_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="process_wrapper_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="process_wrapper_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="process_wrapper_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="process_wrapper.nky"/>
+  <File Type="BITSTR-BMM" Name="process_wrapper_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="process_wrapper.mmi"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="process_wrapper.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="process_wrapper.sysdef"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/shift_rows.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/S_box_layer.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/mem.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -74,7 +74,13 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/S_box_wrapper.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/addRound_key.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -82,7 +88,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/bit_32_crypto_mul.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -90,7 +95,6 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/bit_8_crypto_mul.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -98,7 +102,13 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/crypto_mul_32Bit_wrapper.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mem.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -106,7 +116,20 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/mix_columns.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/shift_rows.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/process_wrapper.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -126,24 +149,15 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/addRound_key.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="shift_rows"/>
+      <Option Name="TopModule" Val="process_wrapper"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
     <File Path="$PSRCDIR/constrs_1/new/tim.xdc">
       <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>

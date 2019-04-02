@@ -35,18 +35,18 @@ module process_wrapper(
     
     localparam state_idle = 3'b000,state_byteSub = 3'b001;
     localparam state_shiftRows = 3'b010, state_mixCols = 3'b011,  state_addKey = 3'b100;
-    reg[2:0] currentState = state_idle, nextState  = state_idle;
+    (*keep = "true"*) reg[2:0] currentState = state_idle, nextState  = state_idle;
     
-    reg start_byteSub = 1'b0, start_shiftRows = 1'b0, start_mixCols = 1'b0, start_addKey = 1'b0, isLayer_first = 1'b0, isLayer_last = 1'b0;
-    reg start_byteSub_reg = 1'b0, start_shiftRows_reg = 1'b0, start_mixCols_reg = 1'b0, start_addKey_reg = 1'b0, isLayer_first_reg = 1'b0;
+    (*keep = "true"*) reg start_byteSub = 1'b0, start_shiftRows = 1'b0, start_mixCols = 1'b0, start_addKey = 1'b0, isLayer_first = 1'b0, isLayer_last = 1'b0;
+    (*keep = "true"*) reg start_byteSub_reg = 1'b0, start_shiftRows_reg = 1'b0, start_mixCols_reg = 1'b0, start_addKey_reg = 1'b0, isLayer_first_reg = 1'b0;
     
-    reg [2:0] fsm_counter = {3{1'b0}}, fsm_counter_val = {3{1'b0}};
+    (*keep = "true"*) reg [2:0] fsm_counter = {3{1'b0}}, fsm_counter_val = {3{1'b0}};
     
-    reg[3:0] iteration_counter = 4'b1001;
+    (*keep = "true"*) reg[3:0] iteration_counter = 4'b1001;
     
-    reg temp_done = 1'b0, fsm_counter_en = 1'b0, fsm_counter_rst = 1'b0, load_fsm_counter = 1'b0;
+    (*keep = "true"*) reg temp_done = 1'b0, fsm_counter_en = 1'b0, fsm_counter_rst = 1'b0, load_fsm_counter = 1'b0;
     
-    assign initial_in = (trigger) ? plain_text ^ initial_key : initial_in;
+    assign initial_in = (trigger) ? plain_text ^ initial_key : buffer_in;
     assign buffer_in = (isLayer_first_reg) ? initial_in : buffer_out;
     
     always @(posedge clk, posedge reset) begin
@@ -78,6 +78,7 @@ module process_wrapper(
             else  begin
                 fsm_counter <= fsm_counter;
             end
+            
             start_byteSub_reg <= start_byteSub;
             start_shiftRows_reg <= start_shiftRows;
             start_mixCols_reg <= start_mixCols;
@@ -241,7 +242,7 @@ module process_wrapper(
                     end
                     else begin
                         nextState = state_byteSub;
-                        start_byteSub = 1'b0;
+                        start_byteSub = 1'b1;
                         start_shiftRows = 1'b0;
                         start_mixCols = 1'b0;
                         start_addKey = 1'b0;

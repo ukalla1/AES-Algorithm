@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"process_wrapper_tb_func_impl.v" \
+"../../../../../AES_algorithm.srcs/sim_1/new/process_wrapper_tb.v" \
+
+# Do not sort compile order
+nosort
