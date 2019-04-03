@@ -1,6 +1,6 @@
 Vivado Simulator 2017.3
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2017.3/bin/unwrapped/win64.o/xelab.exe -wto d87ca268a5174ed2bfc7f48fce2dac6d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot keyGenerator_tb_behav xil_defaultlib.keyGenerator_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2017.3/bin/unwrapped/win64.o/xelab.exe -wto d87ca268a5174ed2bfc7f48fce2dac6d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot process_wrapper_tb_behav xil_defaultlib.process_wrapper_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -10,6 +10,14 @@ Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.mem(MEM_DEPTH=256,INIT_FILE="s_b...
 Compiling module xil_defaultlib.S_box_layer
 Compiling module xil_defaultlib.keyGenerator
-Compiling module xil_defaultlib.keyGenerator_tb
+Compiling module xil_defaultlib.S_box_wrapper_default
+Compiling module xil_defaultlib.shift_rows
+Compiling module xil_defaultlib.bit_8_crypto_mul
+Compiling module xil_defaultlib.bit_32_crypto_mul
+Compiling module xil_defaultlib.crypto_mul_32Bit_wrapper
+Compiling module xil_defaultlib.mix_columns
+Compiling module xil_defaultlib.addRound_key
+Compiling module xil_defaultlib.process_wrapper
+Compiling module xil_defaultlib.process_wrapper_tb
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot keyGenerator_tb_behav
+Built simulation snapshot process_wrapper_tb_behav

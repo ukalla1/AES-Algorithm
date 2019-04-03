@@ -25,29 +25,35 @@ module process_wrapper(
                         input reset,
                         input trigger,
                         input [127:0] plain_text,
-                        input [127:0] initial_key,
                         output reg [127:0] cypher_text
     );
     
     wire [127:0] s_box_layer_out, shift_rows_out, mix_cols_out, roundKey_out, keyGenerator_out;
     
     wire [127:0] buffer_out, buffer_in, initial_in;
+    wire [127:0] initial_key;
+    
+    wire isLayer_first, update_init_key;
     
     localparam state_idle = 3'b000,state_byteSub = 3'b001;
     localparam state_shiftRows = 3'b010, state_mixCols = 3'b011,  state_addKey = 3'b100;
     (*keep = "true"*) reg[2:0] currentState = state_idle, nextState  = state_idle;
     
-    (*keep = "true"*) reg start_byteSub = 1'b0, start_shiftRows = 1'b0, start_mixCols = 1'b0, start_addKey = 1'b0, isLayer_first = 1'b0, isLayer_last = 1'b0;
-    (*keep = "true"*) reg start_byteSub_reg = 1'b0, start_shiftRows_reg = 1'b0, start_mixCols_reg = 1'b0, start_addKey_reg = 1'b0, isLayer_first_reg = 1'b0;
+    (*keep = "true"*) reg start_byteSub = 1'b0, start_shiftRows = 1'b0, start_mixCols = 1'b0, start_addKey = 1'b0, isLayer_last = 1'b0, key_gen = 1'b0;
+    (*keep = "true"*) reg start_byteSub_reg = 1'b0, start_shiftRows_reg = 1'b0, start_mixCols_reg = 1'b0, start_addKey_reg = 1'b0, isLayer_first_reg = 1'b0, key_gen_reg = 1'b0;
     
     (*keep = "true"*) reg [2:0] fsm_counter = {3{1'b0}}, fsm_counter_val = {3{1'b0}};
     
-    (*keep = "true"*) reg[3:0] iteration_counter = 4'b1001;
+    (*keep = "true"*) reg[3:0] iteration_counter = 4'b1010;
     
     (*keep = "true"*) reg temp_done = 1'b0, fsm_counter_en = 1'b0, fsm_counter_rst = 1'b0, load_fsm_counter = 1'b0;
     
     assign initial_in = (trigger) ? plain_text ^ initial_key : buffer_in;
-    assign buffer_in = (isLayer_first_reg) ? initial_in : buffer_out;
+    assign buffer_in = (isLayer_first) ? initial_in : buffer_out;
+    assign initial_key = (update_init_key) ? keyGenerator_out : 128'h754620676e754b20796d207374616854;
+    assign update_init_key = (iteration_counter == 4'b1010) ? 1'b0: 1'b1;
+    assign isLayer_first = (iteration_counter == 4'b1010) ? 1'b1: 1'b0;
+    
     
     always @(posedge clk, posedge reset) begin
         if(reset) begin
@@ -57,6 +63,7 @@ module process_wrapper(
             start_mixCols_reg <= 1'b0;
             start_addKey_reg <= 1'b0;
             isLayer_first_reg <= 1'b0;
+            key_gen_reg <= 1'b0;
         end
         else begin
             if(isLayer_last) begin
@@ -84,8 +91,16 @@ module process_wrapper(
             start_mixCols_reg <= start_mixCols;
             start_addKey_reg <= start_addKey;
             isLayer_first_reg <= isLayer_first;
+            key_gen_reg <= key_gen;
         end
     end
+    
+    keyGenerator k1(
+                    .clk(clk),
+                    .reset(reset),
+                    .in_key_val(initial_key),
+                    .key_gen(key_gen_reg),
+                    .out_key_val(keyGenerator_out));
     
     S_box_wrapper i0(
                     .clk(clk),
@@ -111,7 +126,7 @@ module process_wrapper(
     addRound_key i3(
                     .clk(clk),
                     .reset(reset),
-                    .key_val(0),
+                    .key_val(keyGenerator_out),
                     .data_val(mix_cols_out),
                     .start(start_addKey_reg),
                     .data_out(buffer_out));
@@ -131,20 +146,22 @@ module process_wrapper(
         
             state_idle: begin
                 if(!trigger) begin
+                    key_gen = 1'b0;
                     start_byteSub = 1'b0;
                     start_shiftRows = 1'b0;
                     start_mixCols = 1'b0;
                     start_addKey = 1'b0;
-                    isLayer_first = 1'b0;
+//                    isLayer_first = 1'b0;
                     fsm_counter_en = 1'b0; fsm_counter_rst = 1'b1; load_fsm_counter = 1'b0; fsm_counter_val = {3{1'b0}};
                     nextState = state_idle;
                 end
                 else begin
+                    key_gen = 1'b1;
                     start_byteSub = 1'b1;
                     start_shiftRows = 1'b0;
                     start_mixCols = 1'b0;
                     start_addKey = 1'b0;
-                    isLayer_first = 1'b1;
+//                    isLayer_first = 1'b1;
                     fsm_counter_en = 1'b0; fsm_counter_rst = 1'b0; load_fsm_counter = 1'b1; fsm_counter_val = 3'b011;
                     nextState = state_byteSub;
                 end
@@ -152,20 +169,22 @@ module process_wrapper(
             
             state_byteSub: begin
                 if(fsm_counter >0) begin
+                    key_gen = 1'b0;
                     start_byteSub = 1'b1;
                     start_shiftRows = 1'b0;
                     start_mixCols = 1'b0;
                     start_addKey = 1'b0;
-                    isLayer_first = 1'b0;
+//                    isLayer_first = 1'b0;
                     fsm_counter_en = 1'b1; fsm_counter_rst = 1'b0; load_fsm_counter = 1'b0; fsm_counter_val = {3{1'b0}};
                     nextState = state_byteSub;
                 end
                 else begin
+                    key_gen = 1'b0;
                     start_byteSub = 1'b0;
                     start_shiftRows = 1'b1;
                     start_mixCols = 1'b0;
                     start_addKey = 1'b0;
-                    isLayer_first = 1'b0;
+//                    isLayer_first = 1'b0;
                     fsm_counter_en = 1'b0; fsm_counter_rst = 1'b0; load_fsm_counter = 1'b1; fsm_counter_val = 3'b010;
                     nextState = state_shiftRows;
                 end
@@ -173,30 +192,33 @@ module process_wrapper(
             
             state_shiftRows: begin
                 if(fsm_counter >0) begin
+                    key_gen = 1'b0;
                     start_byteSub = 1'b0;
                     start_shiftRows = 1'b0;
                     start_mixCols = 1'b0;
                     start_addKey = 1'b0;
-                    isLayer_first = 1'b0;
+//                    isLayer_first = 1'b0;
                     fsm_counter_en = 1'b1; fsm_counter_rst = 1'b0; load_fsm_counter = 1'b0; fsm_counter_val = {3{1'b0}};
                     nextState = state_shiftRows;
                 end
                 else begin
                     if(iteration_counter == 0) begin
+                        key_gen = 1'b0;
                         start_byteSub = 1'b0;
                         start_shiftRows = 1'b0;
                         start_mixCols = 1'b0;
                         start_addKey = 1'b1;
-                        isLayer_first = 1'b0;
+//                        isLayer_first = 1'b0;
                         nextState = state_addKey;
                         fsm_counter_en = 1'b0; fsm_counter_rst = 1'b1; load_fsm_counter = 1'b0; fsm_counter_val = 3'b001;
                     end
                     else begin
+                        key_gen = 1'b0;
                         start_byteSub = 1'b0;
                         start_shiftRows = 1'b0;
                         start_mixCols = 1'b1;
                         start_addKey = 1'b0;
-                        isLayer_first = 1'b0;
+//                        isLayer_first = 1'b0;
                         nextState = state_mixCols;
                         fsm_counter_en = 1'b0; fsm_counter_rst = 1'b0; load_fsm_counter = 1'b1; fsm_counter_val = 3'b100;
                     end
@@ -205,21 +227,23 @@ module process_wrapper(
             
             state_mixCols: begin
                 if(fsm_counter >0) begin
+                    key_gen = 1'b0;
                     start_byteSub = 1'b0;
                     start_shiftRows = 1'b0;
                     start_mixCols = 1'b0;
                     start_addKey = 1'b0;
-                    isLayer_first = 1'b0;
+//                    isLayer_first = 1'b0;
                     fsm_counter_en = 1'b1; fsm_counter_rst = 1'b0; load_fsm_counter = 1'b0; fsm_counter_val = {3{1'b0}};
                     temp_done = 1'b0;
                     nextState = state_mixCols;
                 end
                 else begin
+                    key_gen = 1'b0;
                     start_byteSub = 1'b0;
                     start_shiftRows = 1'b0;
                     start_mixCols = 1'b0;
                     start_addKey = 1'b1;
-                    isLayer_first = 1'b0;
+//                    isLayer_first = 1'b0;
                     fsm_counter_en = 1'b0; fsm_counter_rst = 1'b0; load_fsm_counter = 1'b1; fsm_counter_val = 3'b000;
                     temp_done = 1'b1;
                     nextState = state_addKey;
@@ -232,32 +256,35 @@ module process_wrapper(
                 end
                 else begin
                     if(iteration_counter == 0) begin
+                        key_gen = 1'b0;
                         nextState = state_idle;
                         start_byteSub = 1'b0;
                         start_shiftRows = 1'b0;
                         start_mixCols = 1'b0;
                         start_addKey = 1'b0;
-                        isLayer_first = 1'b0;
+//                        isLayer_first = 1'b0;
                         fsm_counter_en = 1'b0; fsm_counter_rst = 1'b1; load_fsm_counter = 1'b0; fsm_counter_val = {3{1'b0}};
                     end
                     else begin
+                        key_gen = 1'b1;
                         nextState = state_byteSub;
                         start_byteSub = 1'b1;
                         start_shiftRows = 1'b0;
                         start_mixCols = 1'b0;
                         start_addKey = 1'b0;
-                        isLayer_first = 1'b0;
+//                        isLayer_first = 1'b0;
                         fsm_counter_en = 1'b0; fsm_counter_rst = 1'b0; load_fsm_counter = 1'b1; fsm_counter_val = 3'b011;
                     end
                 end
             end
             
             default: begin
+                key_gen = 1'b0;
                 start_byteSub = 1'b0;
                 start_shiftRows = 1'b0;
                 start_mixCols = 1'b0;
                 start_addKey = 1'b0;
-                isLayer_first = 1'b0;
+//                isLayer_first = 1'b0;
                 fsm_counter_en = 1'b0; fsm_counter_rst = 1'b1; load_fsm_counter = 1'b0; fsm_counter_val = {3{1'b0}};
                 nextState = state_idle;
             end
@@ -267,7 +294,7 @@ module process_wrapper(
     always @(posedge clk, posedge reset) begin
         isLayer_last <= 1'b0;
         if(reset) begin
-            iteration_counter <= 4'b1001;
+            iteration_counter <= 4'b1010;
             isLayer_last <= 1'b0;
         end
         else begin
@@ -280,7 +307,7 @@ module process_wrapper(
                 isLayer_last <= 1'b0;
             end
             else begin
-                iteration_counter <= 4'b1001;
+                iteration_counter <= 4'b1010;
                 isLayer_last <= 1'b1;
             end
         end

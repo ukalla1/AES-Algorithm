@@ -1,10 +1,10 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Tue Apr  2 15:56:34 2019
+| Date         : Tue Apr  2 21:31:55 2019
 | Host         : tensaZangetsu running 64-bit major release  (build 9200)
-| Command      : report_control_sets -file keyGenerator_control_sets_placed.rpt
-| Design       : keyGenerator
+| Command      : report_control_sets -file process_wrapper_control_sets_placed.rpt
+| Design       : process_wrapper
 | Device       : xc7a200t
 ------------------------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ Table of Contents
 +-------------------------------+-------+
 |             Status            | Count |
 +-------------------------------+-------+
-| Number of unique control sets |     8 |
+| Number of unique control sets |    25 |
 +-------------------------------+-------+
 
 
@@ -31,12 +31,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             105 |           27 |
-| No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              30 |           15 |
-| Yes          | No                    | No                     |             320 |          131 |
-| Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              96 |           41 |
+| No           | No                    | No                     |             528 |          121 |
+| No           | No                    | Yes                    |              19 |           12 |
+| No           | Yes                   | No                     |             290 |           60 |
+| Yes          | No                    | No                     |             288 |           70 |
+| Yes          | No                    | Yes                    |             128 |           36 |
+| Yes          | Yes                   | No                     |            1376 |          364 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 

@@ -6,6 +6,7 @@ verilog xil_defaultlib  \
 "../../../../AES_algorithm.srcs/sources_1/new/bit_32_crypto_mul.v" \
 "../../../../AES_algorithm.srcs/sources_1/new/bit_8_crypto_mul.v" \
 "../../../../AES_algorithm.srcs/sources_1/new/crypto_mul_32Bit_wrapper.v" \
+"../../../../AES_algorithm.srcs/sources_1/new/keyGenerator.v" \
 "../../../../AES_algorithm.srcs/sources_1/new/mem.v" \
 "../../../../AES_algorithm.srcs/sources_1/new/mix_columns.v" \
 "../../../../AES_algorithm.srcs/sources_1/new/process_wrapper.v" \

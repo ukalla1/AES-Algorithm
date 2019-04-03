@@ -2,11 +2,11 @@
 # Vivado v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Tue Apr  2 15:55:04 2019
-# Process ID: 5132
+# Start of session at: Tue Apr  2 21:29:08 2019
+# Process ID: 10700
 # Current directory: C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/synth_2
-# Command line: vivado.exe -log keyGenerator.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source keyGenerator.tcl
-# Log file: C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/synth_2/keyGenerator.vds
+# Command line: vivado.exe -log process_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source process_wrapper.tcl
+# Log file: C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/synth_2/process_wrapper.vds
 # Journal file: C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/synth_2\vivado.jou
 #-----------------------------------------------------------
-source keyGenerator.tcl -notrace
+source process_wrapper.tcl -notrace

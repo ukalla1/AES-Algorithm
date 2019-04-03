@@ -243,8 +243,16 @@ set_property ip_cache_permissions {read write} [current_project]
 read_mem C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/s_block_mem.mem
 read_verilog -library xil_defaultlib {
   C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/S_box_layer.v
-  C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/mem.v
+  C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/S_box_wrapper.v
+  C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/addRound_key.v
+  C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/bit_32_crypto_mul.v
+  C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/bit_8_crypto_mul.v
+  C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/crypto_mul_32Bit_wrapper.v
   C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/keyGenerator.v
+  C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/mem.v
+  C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/mix_columns.v
+  C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/shift_rows.v
+  C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/process_wrapper.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -255,10 +263,10 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
 
-synth_design -top keyGenerator -part xc7a200tfbg676-2 -max_dsp 0
+synth_design -top process_wrapper -part xc7a200tfbg676-2 -max_dsp 0
 
 
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef keyGenerator.dcp
-create_report "synth_2_synth_report_utilization_0" "report_utilization -file keyGenerator_utilization_synth.rpt -pb shift_rows_utilization_synth.pb"
+write_checkpoint -force -noxdef process_wrapper.dcp
+create_report "synth_2_synth_report_utilization_0" "report_utilization -file process_wrapper_utilization_synth.rpt -pb shift_rows_utilization_synth.pb"

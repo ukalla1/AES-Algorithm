@@ -185,6 +185,7 @@ set_msg_config  -ruleid {203}  -id {Synth 8-326}  -string {{WARNING: [Synth 8-32
 set_msg_config  -ruleid {204}  -id {Synth 8-326}  -string {{WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \upper_bits_retimed[2]_i_2__11 /O'}}  -suppress 
 set_msg_config  -ruleid {205}  -id {Synth 8-326}  -string {{WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \upper_bits_retimed[1]_i_2__11 /O'}}  -suppress 
 set_msg_config  -ruleid {206}  -id {Synth 8-326}  -string {{WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_false_path -through \upper_bits_retimed[0]_i_2__11 /O'}}  -suppress 
+set_msg_config  -ruleid {207}  -id {Synth 8-5788}  -string {{WARNING: [Synth 8-5788] Register fsm_counter_reg in module process_wrapper is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/sources_1/new/process_wrapper.v:77]}}  -suppress 
 set_msg_config  -ruleid {21}  -id {Place 30-68}  -string {{ERROR: [Place 30-68] Instance data_in_IBUF[111]_inst (IBUF) is not placed}}  -suppress 
 set_msg_config  -ruleid {22}  -id {Place 30-68}  -string {{ERROR: [Place 30-68] Instance data_in_IBUF[112]_inst (IBUF) is not placed}}  -suppress 
 set_msg_config  -ruleid {23}  -id {Place 30-68}  -string {{ERROR: [Place 30-68] Instance data_in_IBUF[113]_inst (IBUF) is not placed}}  -suppress 
@@ -285,9 +286,9 @@ set rc [catch {
   set_property parent.project_path C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.xpr [current_project]
   set_property ip_output_repo C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/synth_2/keyGenerator.dcp
+  add_files -quiet C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.runs/synth_2/process_wrapper.dcp
   read_xdc C:/Users/uttej/Desktop/VivadoProjs/learn_hw/AES_algorithm/AES_algorithm.srcs/constrs_1/new/tim.xdc
-  link_design -top keyGenerator -part xc7a200tfbg676-2
+  link_design -top process_wrapper -part xc7a200tfbg676-2
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
@@ -303,8 +304,8 @@ set ACTIVE_STEP opt_design
 set rc [catch {
   create_msg_db opt_design.pb
   opt_design 
-  write_checkpoint -force keyGenerator_opt.dcp
-  create_report "impl_2_opt_report_drc_0" "report_drc -file keyGenerator_drc_opted.rpt -pb shift_rows_drc_opted.pb -rpx shift_rows_drc_opted.rpx"
+  write_checkpoint -force process_wrapper_opt.dcp
+  create_report "impl_2_opt_report_drc_0" "report_drc -file process_wrapper_drc_opted.rpt -pb shift_rows_drc_opted.pb -rpx shift_rows_drc_opted.rpx"
   close_msg_db -file opt_design.pb
 } RESULT]
 if {$rc} {
@@ -321,10 +322,10 @@ set rc [catch {
   create_msg_db place_design.pb
   implement_debug_core 
   place_design 
-  write_checkpoint -force keyGenerator_placed.dcp
-  create_report "impl_2_place_report_io_0" "report_io -file keyGenerator_io_placed.rpt"
-  create_report "impl_2_place_report_utilization_0" "report_utilization -file keyGenerator_utilization_placed.rpt -pb shift_rows_utilization_placed.pb"
-  create_report "impl_2_place_report_control_sets_0" "report_control_sets -file keyGenerator_control_sets_placed.rpt"
+  write_checkpoint -force process_wrapper_placed.dcp
+  create_report "impl_2_place_report_io_0" "report_io -file process_wrapper_io_placed.rpt"
+  create_report "impl_2_place_report_utilization_0" "report_utilization -file process_wrapper_utilization_placed.rpt -pb shift_rows_utilization_placed.pb"
+  create_report "impl_2_place_report_control_sets_0" "report_control_sets -file process_wrapper_control_sets_placed.rpt"
   close_msg_db -file place_design.pb
 } RESULT]
 if {$rc} {
@@ -340,18 +341,18 @@ set ACTIVE_STEP route_design
 set rc [catch {
   create_msg_db route_design.pb
   route_design 
-  write_checkpoint -force keyGenerator_routed.dcp
-  create_report "impl_2_route_report_drc_0" "report_drc -file keyGenerator_drc_routed.rpt -pb shift_rows_drc_routed.pb -rpx shift_rows_drc_routed.rpx"
-  create_report "impl_2_route_report_methodology_0" "report_methodology -file keyGenerator_methodology_drc_routed.rpt -pb shift_rows_methodology_drc_routed.pb -rpx shift_rows_methodology_drc_routed.rpx"
-  create_report "impl_2_route_report_power_0" "report_power -file keyGenerator_power_routed.rpt -pb shift_rows_power_summary_routed.pb -rpx shift_rows_power_routed.rpx"
-  create_report "impl_2_route_report_route_status_0" "report_route_status -file keyGenerator_route_status.rpt -pb shift_rows_route_status.pb"
-  create_report "impl_2_route_report_timing_summary_0" "report_timing_summary -file keyGenerator_timing_summary_routed.rpt -warn_on_violation  -rpx shift_rows_timing_summary_routed.rpx"
-  create_report "impl_2_route_report_incremental_reuse_0" "report_incremental_reuse -file keyGenerator_incremental_reuse_routed.rpt"
-  create_report "impl_2_route_report_clock_utilization_0" "report_clock_utilization -file keyGenerator_clock_utilization_routed.rpt"
+  write_checkpoint -force process_wrapper_routed.dcp
+  create_report "impl_2_route_report_drc_0" "report_drc -file process_wrapper_drc_routed.rpt -pb shift_rows_drc_routed.pb -rpx shift_rows_drc_routed.rpx"
+  create_report "impl_2_route_report_methodology_0" "report_methodology -file process_wrapper_methodology_drc_routed.rpt -pb shift_rows_methodology_drc_routed.pb -rpx shift_rows_methodology_drc_routed.rpx"
+  create_report "impl_2_route_report_power_0" "report_power -file process_wrapper_power_routed.rpt -pb shift_rows_power_summary_routed.pb -rpx shift_rows_power_routed.rpx"
+  create_report "impl_2_route_report_route_status_0" "report_route_status -file process_wrapper_route_status.rpt -pb shift_rows_route_status.pb"
+  create_report "impl_2_route_report_timing_summary_0" "report_timing_summary -file process_wrapper_timing_summary_routed.rpt -warn_on_violation  -rpx shift_rows_timing_summary_routed.rpx"
+  create_report "impl_2_route_report_incremental_reuse_0" "report_incremental_reuse -file process_wrapper_incremental_reuse_routed.rpt"
+  create_report "impl_2_route_report_clock_utilization_0" "report_clock_utilization -file process_wrapper_clock_utilization_routed.rpt"
   close_msg_db -file route_design.pb
 } RESULT]
 if {$rc} {
-  write_checkpoint -force keyGenerator_routed_error.dcp
+  write_checkpoint -force process_wrapper_routed_error.dcp
   step_failed route_design
   return -code error $RESULT
 } else {

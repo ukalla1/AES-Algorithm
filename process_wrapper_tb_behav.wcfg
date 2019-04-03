@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="5000000001fs"></ZoomEndTime>
-      <Cursor1Time time="20008000fs"></Cursor1Time>
+      <ZoomEndTime time="410500001fs"></ZoomEndTime>
+      <Cursor1Time time="155000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="87"></NameColumnWidth>
-      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+      <NameColumnWidth column_width="186"></NameColumnWidth>
+      <ValueColumnWidth column_width="177"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="27" />
+   <WVObjectSize size="30" />
    <wvobject fp_name="/process_wrapper_tb/uut/currentState" type="array">
       <obj_property name="ElementShortName">currentState[2:0]</obj_property>
       <obj_property name="ObjectShortName">currentState[2:0]</obj_property>
@@ -48,7 +48,7 @@
       <obj_property name="ElementShortName">plain_text[127:0]</obj_property>
       <obj_property name="ObjectShortName">plain_text[127:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/process_wrapper_tb/initial_key" type="array">
+   <wvobject fp_name="/process_wrapper_tb/uut/initial_key" type="array">
       <obj_property name="ElementShortName">initial_key[127:0]</obj_property>
       <obj_property name="ObjectShortName">initial_key[127:0]</obj_property>
    </wvobject>
@@ -127,5 +127,17 @@
    <wvobject fp_name="/process_wrapper_tb/uut/load_fsm_counter" type="logic">
       <obj_property name="ElementShortName">load_fsm_counter</obj_property>
       <obj_property name="ObjectShortName">load_fsm_counter</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/key_gen_reg" type="logic">
+      <obj_property name="ElementShortName">key_gen_reg</obj_property>
+      <obj_property name="ObjectShortName">key_gen_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/keyGenerator_out" type="array">
+      <obj_property name="ElementShortName">keyGenerator_out[127:0]</obj_property>
+      <obj_property name="ObjectShortName">keyGenerator_out[127:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/process_wrapper_tb/uut/update_init_key" type="logic">
+      <obj_property name="ElementShortName">update_init_key</obj_property>
+      <obj_property name="ObjectShortName">update_init_key</obj_property>
    </wvobject>
 </wave_config>
